@@ -48,5 +48,10 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+
+  # Display more information on error pages
+  gem "better_errors"
+  # Required by Better Errors to use advanced features
+  gem "binding_of_caller"
 end
 
