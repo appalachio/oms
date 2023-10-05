@@ -41,5 +41,9 @@ module OMS
 
     # Raise an error on N+1 database queries.
     config.active_record.strict_loading_by_default = true
+
+    # Configure SQL statements to include a comment with extra runtime information
+    config.active_record.query_log_tags_enabled = true
+    config.active_record.query_log_tags = [:application, :controller, :action, :job, :pid]
   end
 end
