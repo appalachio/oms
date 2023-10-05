@@ -38,5 +38,8 @@ module OMS
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Raise an error on N+1 database queries.
+    config.active_record.strict_loading_by_default = true
   end
 end
