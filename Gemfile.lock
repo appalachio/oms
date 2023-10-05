@@ -74,6 +74,7 @@ GEM
       minitest (>= 5.1)
       mutex_m
       tzinfo (~> 2.0)
+    annotaterb (4.4.1)
     base64 (0.1.1)
     better_errors (2.10.1)
       erubi (>= 1.0.0)
@@ -221,6 +222,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  annotaterb
   better_errors
   binding_of_caller
   bootsnap

@@ -53,5 +53,8 @@ group :development do
   gem "better_errors"
   # Required by Better Errors to use advanced features
   gem "binding_of_caller"
+
+  # Automatically add comments summarizing the moel schema or routes in relevant files
+  gem "annotaterb"
 end
 
