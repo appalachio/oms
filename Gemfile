@@ -85,6 +85,9 @@ group :development, :test do
 
   # Brakeman is a static analysis security scanner
   gem 'brakeman'
+
+  # Bundler Audit checks for known gem vulnerabilities
+  gem 'bundler-audit'
 end
 
 group :development do
