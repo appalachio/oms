@@ -1,0 +1,27 @@
+require:
+  - rubocop-rails
+  - rubocop-rake
+  - rubocop-performance
+  - rubocop-i18n
+  - rubocop-rspec
+  - rubocop-factory_bot
+  - rubocop-capybara
+
+AllCops:
+  NewCops: enable
+
+Style/BlockComments:
+  Enabled: false
+
+Style/SymbolArray:
+  EnforcedStyle: brackets
+
+Style/WordArray:
+  EnforcedStyle: brackets
+
+Bundler/OrderedGems:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
