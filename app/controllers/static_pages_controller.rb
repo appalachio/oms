@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Static pages are not backed by a database model, but are a file in the app/views/static_pages/ directory.
 class StaticPagesController < ApplicationController
   def show
     if page_exists?

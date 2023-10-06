@@ -25,3 +25,9 @@ Bundler/OrderedGems:
 Metrics/BlockLength:
   Enabled: false
 
+Rails/FilePath:
+  Enabled: false
+
+Rails/RootPathnameMethods:
+  Enabled: false
+

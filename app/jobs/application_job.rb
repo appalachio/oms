@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# The root application job. All other jobs inherit from this one.
 class ApplicationJob < ActiveJob::Base
   # Automatically retry jobs that encountered a deadlock
   # retry_on ActiveRecord::Deadlocked

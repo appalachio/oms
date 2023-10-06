@@ -1,0 +1,29 @@
+{
+  "ignored_warnings": [
+    {
+      "warning_type": "Dynamic Render Path",
+      "warning_code": 15,
+      "fingerprint": "48397d6d8da8d83d2c2df7825efc7de54f1e04ad065704a0ff0c9961b3039378",
+      "check_name": "Render",
+      "message": "Render path contains parameter value",
+      "file": "app/controllers/static_pages_controller.rb",
+      "line": 7,
+      "link": "https://brakemanscanner.org/docs/warning_types/dynamic_render_path/",
+      "code": "render(action => \"static_pages/#{params[:page]}\", {})",
+      "render_path": null,
+      "location": {
+        "type": "method",
+        "class": "StaticPagesController",
+        "method": "show"
+      },
+      "user_input": "params[:page]",
+      "confidence": "Medium",
+      "cwe_id": [
+        22
+      ],
+      "note": "The method page_exists? ensures only pages within app/views/static_pages/ can be rendered, regardless of the user input."
+    }
+  ],
+  "updated": "2023-10-06 09:40:45 -0400",
+  "brakeman_version": "6.0.1"
+}
