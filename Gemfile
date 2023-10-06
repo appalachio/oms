@@ -43,6 +43,26 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
+
+  # Use RSpec as the testing framework
+  gem "rspec-rails"
+  # Fuubar is an instafailing progress bar for RSpec
+  gem "fuubar"
+  # Use Factory Bot as the test fixtures framework
+  gem "factory_bot_rails"
+  # Use Faker to generate fake test data
+  gem "faker"
+  # Capybara is used to write system tests
+  gem "capybara"
+  # Selenium Webdrivers is used by Capybara to load web drivers and keep them up to date
+  gem "selenium-webdriver"
+  # Axe core is used to test for a18n
+  gem "axe-core-rspec"
+  gem "axe-core-capybara"
+  # Shoulda Matchers adds many common, one-line RSpec test matchers
+  gem "shoulda-matchers"
+  # SimpleCov records test code coverage
+  gem "simplecov", require: false
 end
 
 group :development do
