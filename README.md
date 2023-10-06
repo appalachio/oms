@@ -2,7 +2,7 @@
 
 OMS is open source software designed to help you manage your organization's online presence and identity.
 
-[![Rails Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop/rubocop-rails)
+![Continuous Integration](https://github.com/appalachio/oms/actions/workflows/continuous_integration.yml/badge.svg?branch=main) [![Rails Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop/rubocop-rails) 
 
 ## License
 
