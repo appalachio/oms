@@ -82,6 +82,9 @@ group :development, :test do
   gem 'rubocop-factory_bot', require: false
   # Adds Capybara specific checks to Rubocop
   gem 'rubocop-capybara', require: false
+
+  # Brakeman is a static analysis security scanner
+  gem 'brakeman'
 end
 
 group :development do

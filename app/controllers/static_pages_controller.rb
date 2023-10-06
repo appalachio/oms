@@ -12,6 +12,6 @@ class StaticPagesController < ApplicationController
   private
 
   def page_exists?
-    File.exist?(Rails.root.join("app/views/static_pages/#{params[:page]}.html.erb").to_s)
+    File.exist?(File.expand_path(File.join(Rails.root, 'app', 'views', 'static_pages', "#{params[:page]}.html.erb")))
   end
 end
