@@ -51,5 +51,16 @@ group :development do
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   gem "rack-mini-profiler"
+
+  # Display better error messages and pages
+  gem "better_errors"
+  # Binding of Caller is used by Better Errors for some advanced features
+  gem "binding_of_caller"
+
+  # Open emails in the web browser during development
+  gem "letter_opener"
+
+  # Automatically add a comment with the database schema to the top of relevant classes as a comment
+  gem "annotate"
 end
 
