@@ -68,5 +68,10 @@ group :development do
 
   # Automatically add a comment with the database schema to the top of relevant classes as a comment
   gem "annotate"
+
+  # Use Lookbook to preview ViewComponents in a UI
+  gem "lookbook", ">= 2.2.2"
+  # Listen is used by Lookbook to enable live previews without reloading
+  gem "listen"
 end
 
