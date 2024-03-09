@@ -43,12 +43,21 @@ gem "image_processing", "~> 1.2"
 # Use Simple Form to make creating forms easier
 gem "simple_form"
 
-# View Components makes views reusable and testable
+# Use View Components to make views reusable and testable
 gem "view_component"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
+
+  # Use RSpec as the testing framework
+  gem "rspec-rails", "~> 6.1.0"
+
+  # Use Factory Bot to create test factories (fixtures)
+  gem "factory_bot_rails"
+
+  # Use Faker to generate fake data
+  gem "faker"
 end
 
 group :development do
@@ -73,5 +82,25 @@ group :development do
   gem "lookbook", ">= 2.2.2"
   # Listen is used by Lookbook to enable live previews without reloading
   gem "listen"
+end
+
+group :test do
+  # Use Capybara to write feature tests
+  gem "capybara"
+
+  # Use Superdiff to improve the diff between RSpec test objects
+  gem "super_diff"
+
+  # Use Fuubar as a RSpec loading bar
+  gem "fuubar"
+
+  # Use Shoulda Matchers to add many common one-line test matchers
+  gem "shoulda-matchers"
+
+  # Use Email Spec to add test matchers for email sending
+  gem "email_spec"
+
+  # Use SimpleCov to measure test code coverage
+  gem "simplecov", require: false
 end
 
