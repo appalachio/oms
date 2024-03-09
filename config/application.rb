@@ -44,6 +44,10 @@ module Oms
 
     # Always eager load to prevent N+1 queries
     config.active_record.strict_loading_by_default = true
+
+    # Enable ActiveSupport notifications for all ViewComponents
+    config.view_component.instrumentation_enabled = true
+    config.view_component.use_deprecated_instrumentation_name = false
   end
 end
 

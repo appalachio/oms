@@ -75,4 +75,10 @@ Rails.application.configure do
 
   # Raise error when a before_action's only/except options reference missing actions
   config.action_controller.raise_on_missing_callback_actions = true
+
+  # Profile rendering of ViewComponents
+  Rack::MiniProfilerRails.subscribe("render.view_component") do |_name, start, finish, _id, payload|
+    Rack::MiniProfilerRails.render_notification_handler(Rack::MiniProfilerRails.shorten_identifier(payload[:identifier]), finish, start)
+  end
 end
+
