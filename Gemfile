@@ -58,6 +58,44 @@ group :development, :test do
 
   # Use Faker to generate fake data
   gem "faker"
+
+  # Use Rubocop as a static code analyzer and to enforce a code style
+  gem "rubocop", require: false
+  # Rubocop Rails is used by Rubocop to add Rails specific checks
+  gem "rubocop-rails", require: false
+  # Rubocop RSpec is used by Rubocop to add RSpec specific checks
+  gem "rubocop-rspec", require: false
+  # Rubocop Factory Bot is used by Rubocop to add Factory Bot specific checks
+  gem "rubocop-factory_bot", require: false
+  # Rubocop Capbyara is used by Rubocop to add Capybara specific checks
+  gem "rubocop-capybara", require: false
+  # Rubocop Rake is used by Rubocop to add Rake specific checks
+  gem "rubocop-rake", require: false
+  # Rubocop Performance is used by Rubocop to add performance specific checks
+  gem "rubocop-performance", require: false
+  # Use the Rails Omakase Rubocop style as the default
+  gem "rubocop-rails-omakase", require: false
+
+  # Use ERB Lint as a static code analyzer for .erb files
+  gem "erb_lint", require: false
+
+  # Use Reek to detect code smells
+  gem "reek"
+
+  # Use Active Record Doctor to catch database issues
+  gem "active_record_doctor"
+  # Use Strong Migrations to catch unsafe database migrations
+  gem "strong_migrations"
+  # Use Database Consistency to ensure the datbase is up to date with model checks
+  gem "database_consistency"
+  # Use Isolator to detect non-atomic database transactions
+  gem "isolator"
+
+  # Use Brakeman as a static analysis security tool
+  gem "brakeman"
+
+  # Use Bundler Audit to check for insecure Gem versions
+  gem "bundler-audit"
 end
 
 group :development do
@@ -87,6 +125,11 @@ end
 group :test do
   # Use Capybara to write feature tests
   gem "capybara"
+  # Selenium Webdriver is used by Capybara as the headless browser
+  gem "selenium-webdriver"
+
+  # Use Capybara Screenshot to take a screenshot of failing feature tests
+  gem "capybara-screenshot"
 
   # Use Superdiff to improve the diff between RSpec test objects
   gem "super_diff"
