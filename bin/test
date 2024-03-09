@@ -1,4 +1,11 @@
 #!/usr/bin/env sh
 
 bundle exec rspec
+bundle exec rubocop
+bundle exec erblint --lint-all
+bundle exec reek
+bin/importmap audit
+bundle exec bundle-audit
+bundle exec rake active_record_doctor
+bundle exec bundle exec database_consistency
 
