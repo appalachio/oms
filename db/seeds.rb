@@ -9,4 +9,3 @@
 #   end
 
 require 'faker'
-

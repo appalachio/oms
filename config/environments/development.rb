@@ -81,4 +81,3 @@ Rails.application.configure do
     Rack::MiniProfilerRails.render_notification_handler(Rack::MiniProfilerRails.shorten_identifier(payload[:identifier]), finish, start)
   end
 end
-

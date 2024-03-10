@@ -1,9 +1,3 @@
-inherit_gem:
-  rubocop-rails-omakase: rubocop.yml
-
-AllCops:
-  DisplayStyleGuide: true
-
 require:
   - rubocop-rails
   - rubocop-rspec
@@ -11,4 +5,20 @@ require:
   - rubocop-capybara
   - rubocop-rake
   - rubocop-performance
+
+inherit_gem:
+  rubocop-rails-omakase: rubocop.yml
+
+AllCops:
+  DisplayStyleGuide: true
+  ExtraDetails: true
+
+Layout/SpaceInsideArrayLiteralBrackets:
+  EnforcedStyle: no_space
+
+Style/WordArray:
+  EnforcedStyle: brackets
+
+Style/AndOr:
+  Enabled: true
 

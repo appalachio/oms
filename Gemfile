@@ -146,4 +146,3 @@ group :test do
   # Use SimpleCov to measure test code coverage
   gem "simplecov", require: false
 end
-
