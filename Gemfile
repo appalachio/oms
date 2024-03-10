@@ -120,6 +120,9 @@ group :development do
   gem "lookbook", ">= 2.2.2"
   # Listen is used by Lookbook to enable live previews without reloading
   gem "listen"
+
+  # Use Overcommit to manage Git hooks
+  gem "overcommit"
 end
 
 group :test do
