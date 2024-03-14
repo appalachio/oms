@@ -46,6 +46,12 @@ gem "simple_form"
 # Use View Components to make views reusable and testable
 gem "view_component"
 
+# Use Paper Trail to track and store changes to models
+gem "paper_trail"
+
+# Use Validation Errors to track and store ActiveModel validation errors on models
+gem "validation_errors"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]

@@ -277,6 +277,9 @@ GEM
       childprocess (>= 0.6.3, < 6)
       iniparse (~> 1.4)
       rexml (~> 3.2)
+    paper_trail (15.1.0)
+      activerecord (>= 6.1)
+      request_store (~> 1.4)
     parallel (1.24.0)
     parser (3.3.0.5)
       ast (~> 2.4.1)
@@ -354,6 +357,8 @@ GEM
     regexp_parser (2.9.0)
     reline (0.4.3)
       io-console (~> 0.5)
+    request_store (1.6.0)
+      rack (>= 1.4)
     rexml (3.2.6)
     rouge (4.2.0)
     rspec-core (3.13.0)
@@ -455,6 +460,9 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.5.0)
+    validation_errors (0.2.0)
+      activerecord (>= 4.1.0)
+      zeitwerk (>= 2.0.0)
     view_component (3.11.0)
       activesupport (>= 5.2.0, < 8.0)
       concurrent-ruby (~> 1.0)
@@ -508,6 +516,7 @@ DEPENDENCIES
   listen
   lookbook (>= 2.2.2)
   overcommit
+  paper_trail
   pg (~> 1.1)
   propshaft
   puma (>= 5.0)
@@ -533,6 +542,7 @@ DEPENDENCIES
   super_diff
   turbo-rails
   tzinfo-data
+  validation_errors
   view_component
   web-console
 

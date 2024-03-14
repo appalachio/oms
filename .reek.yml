@@ -1,3 +1,6 @@
 exclude_paths:
   - db/migrate/20240308121643_create_active_storage_tables.active_storage.rb
   - db/migrate/20240308121939_create_action_text_tables.action_text.rb 
+  - db/migrate/20240314145527_create_versions.rb
+  - db/migrate/20240314161406_create_validation_errors_table.rb
+

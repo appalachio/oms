@@ -5,7 +5,8 @@ ActiveRecordDoctor.configure do
     "schema_migrations",
     "active_storage_blobs",
     "active_storage_attachments",
-    "action_text_rich_texts"
+    "action_text_rich_texts",
+    "validation_errors"
   ]
 
   detector :missing_presence_validation,
@@ -14,6 +15,7 @@ ActiveRecordDoctor.configure do
       "ActiveStorage::Blob",
       "ActiveStorage::VariantRecord",
       "ActionText::RichText",
-      "ActionText::EncryptedRichText"
+      "ActionText::EncryptedRichText",
+      "PaperTrail::Version"
     ]
 end
