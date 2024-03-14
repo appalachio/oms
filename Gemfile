@@ -55,6 +55,11 @@ gem "validation_errors"
 # Use Friendly ID for slugging and permalinking models
 gem "friendly_id"
 
+# Use Active Storage Validations to easily create validations for file uploads
+gem "active_storage_validations"
+# Mini Magick is used by Active Storage Validations for dimension and aspect ratio validators
+gem "mini_magick"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
