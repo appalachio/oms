@@ -3,4 +3,5 @@ exclude_paths:
   - db/migrate/20240308121939_create_action_text_tables.action_text.rb 
   - db/migrate/20240314145527_create_versions.rb
   - db/migrate/20240314161406_create_validation_errors_table.rb
+  - db/migrate/20240314162519_create_friendly_id_slugs.rb
 

@@ -6,7 +6,8 @@ ActiveRecordDoctor.configure do
     "active_storage_blobs",
     "active_storage_attachments",
     "action_text_rich_texts",
-    "validation_errors"
+    "validation_errors",
+    "friendly_id_slugs"
   ]
 
   detector :missing_presence_validation,

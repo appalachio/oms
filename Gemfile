@@ -52,6 +52,9 @@ gem "paper_trail"
 # Use Validation Errors to track and store ActiveModel validation errors on models
 gem "validation_errors"
 
+# Use Friendly ID for slugging and permalinking models
+gem "friendly_id"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
