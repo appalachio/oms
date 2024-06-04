@@ -54,6 +54,10 @@ group :development do
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   gem "rack-mini-profiler"
+  # Memory Profiler is used by Rack Mini Profiler for memory profiling
+  gem "memory_profiler"
+  # Stackprof is used by Rack Mini Profiler for call stack profiling
+  gem "stackprof"
 
   # Use Foreman to run Procfile.dev with bin/dev
   gem "foreman"
