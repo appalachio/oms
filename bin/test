@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+
+bundle exec rubocop
+bundle exec erblint --lint-all
+bundle exec brakeman
+bundle exec bundle-audit check --update
+yarn audit
+bundle exec rake active_record_doctor
+bundle exec database_consistency
+bundle exec rspec
