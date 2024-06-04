@@ -61,5 +61,18 @@ group :development do
 
   # Use Foreman to run Procfile.dev with bin/dev
   gem "foreman"
+
+  # Use Better Errors for improved error pages
+  gem "better_errors"
+  # Binding of Caller is used by Better Errors for optional, advanced features
+  gem "binding_of_caller"
+
+  # Use Letter Opener to open emails sent in development in a new tab of the browser
+  gem "letter_opener"
+  # Use Letter Opener Web to view all sent emails in the web browser
+  gem "letter_opener_web"
+
+  # Use Annotate to automatically add a comment with the database schema at the top of relevant files
+  gem "annotate"
 end
 
