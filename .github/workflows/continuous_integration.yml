@@ -1,5 +1,9 @@
 name: Continuous Integration
-on: [push, pull_request]
+on: 
+  pull_request:
+  push:
+    branches: [main]
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -25,14 +29,15 @@ jobs:
       RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           bundler-cache: true
+          ruby-version: .ruby-version
       - name: Setup test database
         run: bundle exec rails db:prepare
       - name: Setup test assets
         run: bundle exec rails assets:precompile
-      - name: Run all tests and checks
+      - name: Run all tests, linting, and checks
         run: bin/test
