@@ -42,5 +42,8 @@ module Oms
     # Set the timezone to UTC
     config.time_zone = "UTC"
     config.active_record.default_timezone = :utc
+
+    # Raise errors on N+1 SQL queries
+    config.active_record.strict_loading_by_default = true
   end
 end
