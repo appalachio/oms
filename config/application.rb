@@ -43,7 +43,15 @@ module Oms
     config.time_zone = 'UTC'
     config.active_record.default_timezone = :utc
 
-    # Raise errors on N+1 SQL queries
-    config.active_record.strict_loading_by_default = true
+    # Don't raise errors on N+1 SQL queries by default
+    # This prevents false postives from gems
+    # Reenable this in individual application models with:
+    #
+    # self.strict_loading_by_default = true
+    #
+    config.active_record.strict_loading_by_default = false
+
+    # Use Solid Queue for Active Job background jobs
+    config.active_job.queue_adapter = :solid_queue
   end
 end

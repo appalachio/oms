@@ -9,38 +9,19 @@ ActiveRecordDoctor.configure do
     'active_storage_attachments',
     'action_text_rich_texts',
 
-    'validation_errors',
+    /^solid_queue_/,
     'versions',
     'version_associations',
-    'friendly_id_slugs'
+    'friendly_id_slugs',
+    'validation_errors'
   ]
 
-  detector :missing_presence_validation,
-           ignore_models: [
-             'ActiveStorage::Attachment',
-             'ActiveStorage::Blob',
-             'ActiveStorage::VariantRecord',
-             'ActionText::RichText',
-             'ActionText::EncryptedRichText',
-
-             'PaperTrail::Version',
-             'PaperTrail::VersionAssociation',
-             'FriendlyId::Slug'
-           ]
-
-  detector :incorrect_length_validation,
-           ignore_models: [
-             'FriendlyId::Slug'
-           ]
-
-  detector :undefined_table_references,
-           ignore_models: [
-             'PaperTrail::VersionAssociation',
-             'ActionMailbox::InboundEmail'
-           ]
-
-  detector :incorrect_dependent_option,
-           ignore_models: [
-             'PaperTrail::Version'
-           ]
+  global :ignore_models, [
+    /^ActiveStorage::/,
+    /^ActionText::/,
+    /^ActionMailbox::/,
+    /^SolidQueue::/,
+    /^PaperTrail::/,
+    /^FriendlyId::/
+  ]
 end

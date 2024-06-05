@@ -30,7 +30,7 @@ gem 'cssbundling-rails'
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem 'jbuilder'
 
-# Use Redis adapter to run Action Cable in production
+# Use Redis adapter to run Action Cable in production and as a cache
 gem 'redis', '>= 4.0.1'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -44,6 +44,11 @@ gem 'image_processing', '~> 1.2'
 
 # Use Query Count to log the number of database queries in log files
 gem 'query_count'
+
+# Use Solid Queue for Active Job background jobs
+gem 'solid_queue'
+# Use Mission Control Jobs as a frontend for Active Job
+gem 'mission_control-jobs'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

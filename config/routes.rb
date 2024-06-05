@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   get 'up' => 'rails/health#show', as: :rails_health_check
 
   if Rails.env.development?
+    # View background jobs
+    mount MissionControl::Jobs::Engine, at: '/background_jobs'
+
     # View all sent emails in the web browser
     mount LetterOpenerWeb::Engine, at: '/sent_emails'
   end
