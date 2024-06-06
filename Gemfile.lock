@@ -252,6 +252,11 @@ GEM
       childprocess (>= 0.6.3, < 6)
       iniparse (~> 1.4)
       rexml (~> 3.2)
+    paper_trail (15.1.0)
+      activerecord (>= 6.1)
+      request_store (~> 1.4)
+    paper_trail-association_tracking (2.2.1)
+      paper_trail (>= 12.0)
     parallel (1.24.0)
     parser (3.3.2.0)
       ast (~> 2.4.1)
@@ -324,6 +329,8 @@ GEM
     regexp_parser (2.9.2)
     reline (0.5.8)
       io-console (~> 0.5)
+    request_store (1.7.0)
+      rack (>= 1.4)
     rexml (3.2.8)
       strscan (>= 3.0.9)
     rouge (4.2.1)
@@ -475,6 +482,8 @@ DEPENDENCIES
   memory_profiler
   mission_control-jobs
   overcommit
+  paper_trail
+  paper_trail-association_tracking
   pg (~> 1.1)
   propshaft
   puma (>= 5.0)

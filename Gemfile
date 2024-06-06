@@ -50,6 +50,11 @@ gem 'solid_queue'
 # Use Mission Control Jobs as a frontend for Active Job
 gem 'mission_control-jobs'
 
+# Use Paper Trail to track and store changes to models
+gem 'paper_trail'
+# Paper Trail Association Tracking is used by Paper Trail to also track associations
+gem 'paper_trail-association_tracking'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri windows]
