@@ -20,3 +20,5 @@ linters:
         Enabled: false
       Style/FrozenStringLiteralComment:
         Enabled: false
+exclude:
+  - '**/vendor/**/*'
