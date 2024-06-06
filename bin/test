@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
+set -e
 
 bundle exec rubocop
 bundle exec erblint --lint-all
