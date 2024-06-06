@@ -55,6 +55,9 @@ gem 'paper_trail'
 # Paper Trail Association Tracking is used by Paper Trail to also track associations
 gem 'paper_trail-association_tracking'
 
+# Use Validation Errors to store validation errors made on models by users
+gem 'validation_errors'
+
 # Use FriendlyID to customize URL slugs for models
 gem 'friendly_id'
 

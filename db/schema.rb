@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_06_193440) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_06_194108) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -165,6 +165,17 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_06_193440) do
     t.index ["expires_at"], name: "index_solid_queue_semaphores_on_expires_at"
     t.index ["key", "value"], name: "index_solid_queue_semaphores_on_key_and_value"
     t.index ["key"], name: "index_solid_queue_semaphores_on_key", unique: true
+  end
+
+  create_table "validation_errors", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "invalid_model_name"
+    t.uuid "invalid_model_id"
+    t.string "action"
+    t.json "details"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["action"], name: "index_validation_errors_on_action"
+    t.index ["invalid_model_name"], name: "index_validation_errors_on_invalid_model_name"
   end
 
   create_table "version_associations", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|

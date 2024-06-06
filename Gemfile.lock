@@ -435,6 +435,9 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.5.0)
+    validation_errors (0.2.0)
+      activerecord (>= 4.1.0)
+      zeitwerk (>= 2.0.0)
     web-console (4.2.1)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -512,6 +515,7 @@ DEPENDENCIES
   super_diff
   turbo-rails
   tzinfo-data
+  validation_errors
   web-console
 
 RUBY VERSION
