@@ -22,3 +22,4 @@ linters:
         Enabled: false
 exclude:
   - '**/vendor/**/*'
+  - '**/app/views/kaminari/*'
