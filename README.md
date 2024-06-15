@@ -4,24 +4,30 @@
 [![Ruby Style Guide](https://img.shields.io/badge/code_style-ruby-brightgreen.svg)](https://rubystyle.guide)
 [![Rails Style Guide](https://img.shields.io/badge/code_style-rails-brightgreen.svg)](https://rails.rubystyle.guide)
 
-OMS (Organization Management System) is a full stack, Ruby on Rails web application designed specifically to help nonprofits and small organizations meet their online and technology needs. Currently, this includes a content management system (CMS) and user management.
+OMS (Organization Management System) is a full stack, Ruby on Rails web application designed specifically to help nonprofits and small organizations meet their online and technology needs. Currently, this includes user management and a content management system (CMS) for their website.
 
 ## Contributing
 
 Contributions are welcomed! Please first review the [Code of Conduct](https://github.com/appalachio/oms/blob/main/code_of_conduct.md).
 
-All commits must be signed off with the [Developer Certificate of Origin](https://www.developercertificate.org/).
+All commits must be signed off with the [Developer Certificate of Origin](https://www.developercertificate.org/) and a valid [commit signature](https://docs.github.com/en/authentication/managing-commit-signature-verification).
 
 ### Development Setup
 
-First, clone the repository to your development environment:
+First, clone the repository in your development environment:
 ```console
 git clone git@github.com:appalachio/oms.git
 ```
 
-Then, run the setup script:
+Then, enter the project directory and run the setup script:
 ```console
+cd oms/
 bin/setup
+```
+
+Finally, launch the necessary local servers:
+```console
+bin/dev
 ```
 
 ### Testing
