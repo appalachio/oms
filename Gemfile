@@ -84,6 +84,7 @@ group :development, :test do
   gem 'rubocop-rake', require: false
   # Rubocop RSpec is used by Rubocop to add RSpec specific checks
   gem 'rubocop-rspec', require: false
+  gem 'rubocop-rspec_rails', require: false
   # Rubocop Factory Bot is used by Rubocop to add Factory Bot specific checks
   gem 'rubocop-factory_bot', require: false
   # Rubocop Capbyara is used by Rubocop to add Capybara specific checks
