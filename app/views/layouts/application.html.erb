@@ -11,6 +11,18 @@
   </head>
 
   <body>
+    <% flash.each do |type, message| %>
+      <% if type == 'alert' %>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <%= message %>
+        </div>
+      <% else %>
+        <div class="alert alert-primary alert-dismissible fade show" role="alert">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
