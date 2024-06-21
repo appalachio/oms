@@ -4,6 +4,9 @@ source 'https://rubygems.org'
 
 ruby file: '.ruby-version'
 
+# Needed until Ruby 3.3.4 is released https://github.com/ruby/ruby/pull/11006
+gem 'net-pop', github: 'ruby/net-pop'
+
 gem 'rails', '~> 7.1.3', '>= 7.1.3.3'
 
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
