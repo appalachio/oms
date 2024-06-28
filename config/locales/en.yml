@@ -28,4 +28,7 @@
 #       enabled: "ON"
 
 en:
-  hello: "Hello world"
+  page_created: 'Page was successfully created.'
+  page_updated: 'Page was successfully updated.'
+  page_destroyed: 'Page was successfully destroyed.'
+
