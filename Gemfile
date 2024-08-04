@@ -43,6 +43,48 @@ gem "image_processing", "~> 1.2"
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", "~> 1.9", platforms: %i[ mri windows ]
+
+  # Use Rubocop as a static code analyzer and linter
+  gem 'rubocop', '~> 1.65', require: false
+  # Rubocop Rails is used by Rubocop to add Rails specific checks
+  gem 'rubocop-rails', '~> 2.25', require: false
+  # Rubocop Performance is used by Rubocop to add performance specific checks
+  gem 'rubocop-performance', '~> 1.21', require: false
+  # Rubocop Rake is used by Rubocop to add Rake specific checks
+  gem 'rubocop-rake', '~> 0.6', require: false
+  # Rubocop RSpec is used by Rubocop to add RSpec specific checks
+  gem 'rubocop-rspec', '~> 3.0', require: false
+  # Rubocop RSpec Rails is used by Rubocop to add Rails RSpec specific checks
+  gem 'rubocop-rspec_rails', '~> 2.30', require: false
+  # Rubocop Factory Bot is used by Rubocop to add Factory Bot specific checks
+  gem 'rubocop-factory_bot', '~> 2.26', require: false
+  # Rubocop Capbyara is used by Rubocop to add Capybara specific checks
+  gem 'rubocop-capybara', '~> 2.21', require: false
+
+  # Use ERB Lint as a static code analyzer and linter for .erb files
+  gem 'erb_lint', '~> 0.6', require: false
+
+  # Use Brakeman as a static code analyzer for security vulnerabilities
+  gem 'brakeman', '~> 6.1'
+  # Use Bundler Audit to check for insecure versions of gems
+  gem 'bundler-audit', '~> 0.9'
+
+  # Use Isolator to detect nonatomic database transactions
+  gem 'isolator', '~> 1.0'
+  # Use Active Record Doctor to detect common database issues
+  gem 'active_record_doctor', '~> 1.14'
+  # Use Database Consistency to detect differences between database migrations and associated models
+  gem 'database_consistency', '~> 1.7'
+  # Use Strong Migrations to catch common, unsafe database migrations
+  gem 'strong_migrations', '~> 2.0'
+
+  # Use RSpec Rails as the testing framework
+  gem 'rspec-rails', '~> 6.1'
+
+  # Use Factory Bot for test fixtures
+  gem 'factory_bot_rails', '~> 6.4'
+  # Use Faker to create pseduofake test data
+  gem 'faker', '~> 3.4'
 end
 
 group :development do
@@ -71,5 +113,29 @@ group :development do
 
   # Use Annotate to automatically add a comment with the database schema at the top of relevant files
   gem "annotate", "~> 3.2"
+
+  # Use Overcommit to manage Git hooks
+  gem 'overcommit', '~> 0.64'
 end
 
+group :test do
+  # Use Capybara for simulating user interactions with a browser in tests
+  gem 'capybara'
+  # Selenium Webdriver is used by Capybara as the headless browser
+  gem 'selenium-webdriver'
+
+  # Use Capybara Screenshot to take a screenshot of each failing GUI test
+  gem 'capybara-screenshot'
+
+  # Use Superdiff to improve the diff between RSpec test objects
+  gem 'super_diff'
+
+  # Use Fuubar as a RSpec progress bar
+  gem 'fuubar'
+
+  # Use Shoulda Matchers to add many common, one line test matchers
+  gem 'shoulda-matchers'
+
+  # Use SimpleCov to measure test code coverage
+  gem 'simplecov', require: false
+end

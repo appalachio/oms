@@ -1,0 +1,29 @@
+require:
+  - rubocop-rails
+  - rubocop-performance
+  - rubocop-rake
+  - rubocop-rspec
+  - rubocop-rspec_rails
+  - rubocop-factory_bot
+  - rubocop-capybara
+
+AllCops:
+  DisplayStyleGuide: true
+  ExtraDetails: true
+  NewCops: enable
+
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
