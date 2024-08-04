@@ -25,4 +25,3 @@ ActiveRecordDoctor.configure do
     /^FriendlyId::/
   ]
 end
-
