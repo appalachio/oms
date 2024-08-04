@@ -54,5 +54,22 @@ group :development do
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   gem "rack-mini-profiler", "~> 3.3"
+  # Memory Profiler is used by Rack Mini Profiler for memory profiling
+  gem "memory_profiler", "~> 1.0"
+  # Stackprof is used by Rack Mini Profiler for call stack profiling
+  gem "stackprof", "~> 0.2"
+
+  # Use Better Errors for improved error pages
+  gem "better_errors", "~> 2.10"
+  # Binding of Caller is used by Better Errors for optional, advanced features
+  gem "binding_of_caller", "~> 1.0"
+
+  # Use Letter Opener to open emails sent in development in a new tab of the browser
+  gem "letter_opener", "~> 1.10"
+  # Use Letter Opener Web to view all sent emails in the web browser
+  gem "letter_opener_web", "~> 3.0"
+
+  # Use Annotate to automatically add a comment with the database schema at the top of relevant files
+  gem "annotate", "~> 3.2"
 end
 
