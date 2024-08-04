@@ -36,5 +36,8 @@ module Oms
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Use Solid Queue as the Active Job backend
+    config.active_job.queue_adapter = :solid_queue
   end
 end

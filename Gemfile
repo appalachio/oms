@@ -42,6 +42,11 @@ gem 'bootsnap', '~> 1.18', require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem 'image_processing', '~> 1.2'
 
+# Use Solid Queue for async, background jobs
+gem 'solid_queue', '~> 0.3'
+# Use Mission Control Jobs as a web UI for Solid Queue jobs
+gem 'mission_control-jobs', '~> 0.2'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', '~> 1.9', platforms: %i[mri windows]

@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get 'up' => 'rails/health#show', as: :rails_health_check
 
+  # View all background jobs and their status in the web browser
+  mount MissionControl::Jobs::Engine, at: '/background_jobs'
+
   if Rails.env.development?
     # View all sent emails in the web browser
     mount LetterOpenerWeb::Engine, at: '/sent_emails'
