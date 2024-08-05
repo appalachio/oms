@@ -163,6 +163,8 @@ GEM
     ffi (1.17.0-x86_64-darwin)
     ffi (1.17.0-x86_64-linux-gnu)
     foreman (0.88.1)
+    friendly_id (5.5.1)
+      activerecord (>= 4.0.0)
     fugit (1.11.0)
       et-orbi (~> 1, >= 1.2.11)
       raabro (~> 1.4)
@@ -468,6 +470,7 @@ DEPENDENCIES
   factory_bot_rails (~> 6.4)
   faker (~> 3.4)
   foreman (~> 0.88)
+  friendly_id (~> 5.5)
   fuubar
   image_processing (~> 1.2)
   isolator (~> 1.0)
