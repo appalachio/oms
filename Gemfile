@@ -56,6 +56,9 @@ gem 'friendly_id', '~> 5.5'
 # Use Kaminari to paginate views
 gem 'kaminari', '~> 1.2'
 
+# Use Local Time to display datetimes in the user's local timezone
+gem 'local_time', '~> 3.0'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', '~> 1.9', platforms: %i[mri windows]

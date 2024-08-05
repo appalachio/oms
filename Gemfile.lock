@@ -218,6 +218,7 @@ GEM
       letter_opener (~> 1.9)
       railties (>= 6.1)
       rexml
+    local_time (3.0.2)
     logger (1.6.0)
     loofah (2.22.0)
       crass (~> 1.0.2)
@@ -491,6 +492,7 @@ DEPENDENCIES
   kaminari (~> 1.2)
   letter_opener (~> 1.10)
   letter_opener_web (~> 3.0)
+  local_time (~> 3.0)
   memory_profiler (~> 1.0)
   mission_control-jobs (~> 0.2)
   overcommit (~> 0.64)
