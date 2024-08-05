@@ -53,6 +53,9 @@ gem 'paper_trail', '~> 15.1'
 # Use FriendlyID to customize URL slugs for models
 gem 'friendly_id', '~> 5.5'
 
+# Use Kaminari to paginate views
+gem 'kaminari', '~> 1.2'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', '~> 1.9', platforms: %i[mri windows]
