@@ -8,3 +8,7 @@ ActiveStorage::Blob:
 ActiveStorage::VariantRecord:
   enabled: false
 
+Page:
+  slug:
+    NullConstraintChecker:
+      enabled: false

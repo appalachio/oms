@@ -10,7 +10,16 @@ class PagesController < ApplicationController
   end
 
   # GET /pages/1 or /pages/1.json
-  def show; end
+  def show
+    # If the user uses an old page URL, redirect to the latest URL and show a flash alert
+    # rubocop:disable Style/GuardClause
+    if request.path != page_path(@page)
+      flash.alert = "The page once at #{request.url} has been updated, and is now located at \
+          #{page_url(@page)}. You have been redirected."
+      redirect_to @page, status: :moved_permanently and return
+    end
+    # rubocop:enable Style/GuardClause
+  end
 
   # GET /pages/new
   def new
@@ -18,7 +27,16 @@ class PagesController < ApplicationController
   end
 
   # GET /pages/1/edit
-  def edit; end
+  def edit
+    # If the user uses an old edit page URL, redirect to the latest URL and show a flash alert
+    # rubocop:disable Style/GuardClause
+    if request.path != edit_page_path(@page)
+      flash.alert = "The page once at #{request.url} has been updated, and is now located at \
+          #{edit_page_url(@page)}. You have been redirected."
+      redirect_to edit_page_path(@page), status: :moved_permanently and return
+    end
+    # rubocop:enable Style/GuardClause
+  end
 
   # POST /pages or /pages.json
   def create
@@ -62,7 +80,7 @@ class PagesController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_page
-    @page = Page.find(params[:id])
+    @page = Page.friendly.find(params[:id])
   end
 
   # Only allow a list of trusted parameters through.

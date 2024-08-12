@@ -24,4 +24,10 @@ ActiveRecordDoctor.configure do
     /^PaperTrail::/,
     /^FriendlyId::/
   ]
+
+  detector :missing_presence_validation,
+           ignore_attributes: ['Page.slug']
+
+  detector :incorrect_dependent_option,
+           ignore_associations: ['Page.slugs']
 end

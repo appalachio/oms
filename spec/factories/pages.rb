@@ -7,7 +7,7 @@
 #  id           :uuid             not null, primary key
 #  archived_at  :datetime
 #  published_at :datetime
-#  slug         :text
+#  slug         :text             not null
 #  subtitle     :text
 #  title        :text             not null
 #  created_at   :datetime         not null
