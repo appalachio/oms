@@ -18,11 +18,17 @@ class Page < ApplicationRecord
 
   has_rich_text :body
 
+  validates :title, presence: true
+
+  # Track and store changes to this page
+  # Due to ActionText and Active Storage touching a model on creation,
+  # which creates an unnecessary empty version, skip storing a new version on touch.
+  # https://github.com/paper-trail-gem/paper_trail/issues/1465
+  has_paper_trail on: %i[create update destroy]
+
   # Display pages by their title (and maybe subtitle), not their ID
   extend FriendlyId
   friendly_id :slug_candidates
-
-  validates :title, presence: true
 
   # Try to use the page's title for slug first, if thats nonunique use title and subtitle, then finally append a UUID
   def slug_candidates
