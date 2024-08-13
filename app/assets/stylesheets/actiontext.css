@@ -2,9 +2,8 @@
  * Provides a drop-in pointer for the default Trix stylesheet that will format the toolbar and
  * the trix-editor content (whether displayed or under editing). Feel free to incorporate this
  * inclusion directly in any other asset bundle and remove this file.
- *
- *= require trix
 */
+@import "trix/dist/trix";
 
 /*
  * We need to override trix.css’s image gallery styles to accommodate the
@@ -29,3 +28,9 @@
   padding: 0 !important;
   max-width: 100% !important;
 }
+
+/*
+ * TailwindCSS disables list styles, so we need to reenable them.
+ */
+.trix-content ul { list-style: disc; }
+.trix-content ol { list-style: decimal; }
