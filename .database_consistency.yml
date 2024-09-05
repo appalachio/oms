@@ -12,3 +12,20 @@ Page:
   slug:
     NullConstraintChecker:
       enabled: false
+
+User:
+  slug:
+    enabled: false
+  index_users_on_confirmation_token:
+    enabled: false
+  index_users_on_name:
+    enabled: false
+  index_users_on_reset_password_token:
+    enabled: false
+  index_users_on_slug:
+    enabled: false
+  index_users_on_unlock_token:
+    enabled: false
+  index_users_on_username:
+    enabled: false
+

@@ -20,7 +20,7 @@ class Page < ApplicationRecord
 
   validates :title, presence: true
 
-  # Track and store changes to this page
+  # Track and store changes to pages
   # Due to ActionText and Active Storage touching a model on creation,
   # which creates an unnecessary empty version, skip storing a new version on touch.
   # https://github.com/paper-trail-gem/paper_trail/issues/1465

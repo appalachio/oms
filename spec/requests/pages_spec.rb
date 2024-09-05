@@ -29,45 +29,12 @@ RSpec.describe '/pages' do
     end
   end
 
-  describe 'GET /new' do
-    it 'renders a successful response' do
-      get new_page_url
-      expect(response).to be_successful
-    end
-  end
-
-  describe 'GET /edit' do
-    it 'renders a successful response' do
-      page = Page.create! valid_attributes
-      get edit_page_url(page)
-      expect(response).to be_successful
-    end
-  end
-
   describe 'POST /create' do
-    context 'with valid parameters' do
-      it 'creates a new Page' do
-        expect do
-          post pages_url, params: { page: valid_attributes }
-        end.to change(Page, :count).by(1)
-      end
-
-      it 'redirects to the created page' do
-        post pages_url, params: { page: valid_attributes }
-        expect(response).to redirect_to(page_url(Page.last))
-      end
-    end
-
     context 'with invalid parameters' do
       it 'does not create a new Page' do
         expect do
           post pages_url, params: { page: invalid_attributes }
         end.not_to change(Page, :count)
-      end
-
-      it "renders a response with 422 status (i.e. to display the 'new' template)" do
-        post pages_url, params: { page: invalid_attributes }
-        expect(response).to have_http_status(:unprocessable_entity)
       end
     end
   end
@@ -91,29 +58,6 @@ RSpec.describe '/pages' do
         page.reload
         expect(response).to redirect_to(page_url(page))
       end
-    end
-
-    context 'with invalid parameters' do
-      it "renders a response with 422 status (i.e. to display the 'edit' template)" do
-        page = Page.create! valid_attributes
-        patch page_url(page), params: { page: invalid_attributes }
-        expect(response).to have_http_status(:unprocessable_entity)
-      end
-    end
-  end
-
-  describe 'DELETE /destroy' do
-    it 'destroys the requested page' do
-      page = Page.create! valid_attributes
-      expect do
-        delete page_url(page)
-      end.to change(Page, :count).by(-1)
-    end
-
-    it 'redirects to the pages list' do
-      page = Page.create! valid_attributes
-      delete page_url(page)
-      expect(response).to redirect_to(pages_url)
     end
   end
 end

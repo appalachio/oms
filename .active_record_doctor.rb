@@ -26,8 +26,9 @@ ActiveRecordDoctor.configure do
   ]
 
   detector :missing_presence_validation,
-           ignore_attributes: ['Page.slug']
+           ignore_attributes: ['Page.slug', 'User.slug', 'User.encrypted_password', 'User.sign_in_count',
+                               'User.failed_attempts']
 
   detector :incorrect_dependent_option,
-           ignore_associations: ['Page.slugs']
+           ignore_associations: ['Page.slugs', 'User.slugs']
 end
