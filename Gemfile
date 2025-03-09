@@ -57,5 +57,19 @@ group :development do
 
   # Use Foreman to run necessary servers for development
   gem "foreman", "~> 0.88"
-end
 
+  # Add speed badges to the top of pages [https://github.com/MiniProfiler/rack-mini-profiler]
+  gem "rack-mini-profiler", "~> 3.3"
+  # Memory Profiler is used by Rack Mini Profiler for memory profiling
+  gem "memory_profiler", "~> 1.1"
+  # Stackprof is used by Rack Mini Profiler for call stack profiling
+  gem "stackprof", "~> 0.2"
+
+  # Use Letter Opener to open emails sent in development in a new tab of the browser
+  gem "letter_opener", "~> 1.10"
+  # Use Letter Opener Web to view all sent emails in the web browser
+  gem "letter_opener_web", "~> 3.0"
+
+  # Use AnnotateRB to automatically add a comment with the database schema at the top of relevant files
+  gem "annotaterb", "~> 4.14"
+end
