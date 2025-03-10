@@ -49,6 +49,30 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", "~> 1.1", require: false
+  # Rubocop Rake is used by Rubocop to add Rake specific checks
+  gem "rubocop-rake", "~> 0.7", require: false
+  # Rubocop RSpec is used by Rubocop to add RSpec specific checks
+  gem "rubocop-rspec", "~> 3.5", require: false
+  # Rubocop RSpec Rails is used by Rubocop to add Rails RSpec specific checks
+  gem "rubocop-rspec_rails", "~> 2.31", require: false
+  # Rubocop Factory Bot is used by Rubocop to add Factory Bot specific checks
+  gem "rubocop-factory_bot", "~> 2.27", require: false
+  # Rubocop Capbyara is used by Rubocop to add Capybara specific checks
+  gem "rubocop-capybara", "~> 2.22", require: false
+
+  # Use ERB Lint as a static code analyzer and linter for .erb files
+  gem "erb_lint", "~> 0.9", require: false
+
+  # Use Bundler Audit to check for insecure versions of gems
+  gem "bundler-audit", "~> 0.9"
+
+  # Use RSpec Rails as the testing framework
+  gem "rspec-rails", "~> 7.1"
+
+  # Use Factory Bot for test fixtures
+  gem "factory_bot_rails", "~> 6.4"
+  # Use Faker to create pseduofake test data
+  gem "faker", "~> 3.5"
 end
 
 group :development do
@@ -72,4 +96,26 @@ group :development do
 
   # Use AnnotateRB to automatically add a comment with the database schema at the top of relevant files
   gem "annotaterb", "~> 4.14"
+end
+
+group :test do
+  # Use Capybara for simulating user interactions with a browser in tests
+  gem "capybara", "~> 3.40"
+  # Selenium Webdriver is used by Capybara as the headless browser
+  gem "selenium-webdriver", "~> 4.29"
+
+  # Use Capybara Screenshot to take a screenshot of each failing GUI test
+  gem "capybara-screenshot", "~> 1.0"
+
+  # Use Superdiff to improve the diff between RSpec test objects
+  gem "super_diff", "~> 0.15"
+
+  # Use Fuubar as a RSpec progress bar
+  gem "fuubar", "~> 2.5"
+
+  # Use Shoulda Matchers to add many common, one line test matchers
+  gem "shoulda-matchers", "~> 6.4"
+
+  # Use SimpleCov to measure test code coverage
+  gem "simplecov", "~> 0.22", require: false
 end

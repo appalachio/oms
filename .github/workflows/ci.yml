@@ -37,3 +37,14 @@ jobs:
       - name: Lint code for consistent style
         run: bin/rubocop -f github
 
+      - name: Lint .html.erb files for consistent style and safety
+        run: bundle exec erb_lint --lint-all
+
+      - name: Scan Ruby dependencies for out of date, insecure versions
+        run: bundle exec bundle-audit check --update
+
+      - name: Scan Javascript dependencies for out of date, insecure versions
+        run: yarn audit
+
+      - name: Run tests
+        run: bundle exec rspec
