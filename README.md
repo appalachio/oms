@@ -1,5 +1,5 @@
 # Organization Management System (oms)
-![Continuous Integration](https://github.com/appalachio/oms/actions/workflows/continuous_integration.yml/badge.svg?branch=main)
+![Continuous Integration](https://github.com/appalachio/oms/actions/workflows/ci.yml/badge.svg?branch=main)
 
 oms (Organization Management System) is a Ruby on Rails based web application designed to help small organizations with their online and technology needs.
 
