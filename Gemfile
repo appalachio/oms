@@ -55,6 +55,19 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console", "~> 4.2.1"
+
+  # Adds a speed badge to every page for profiling
+  gem "rack-mini-profiler", "~> 4.0.1"
+  # Adds memory profiling to Rack Mini Profiler
+  gem "memory_profiler", "~> 1.1.0"
+  # Adds call stack profiling to Rack Mini Profiler
+  gem "stackprof", "~> 0.2.27"
+
+  # Send emails to a new tab of the developers default web browser
+  gem "letter_opener", "~> 1.10.0"
+
+  # Adds a comment with the database schema to the top of relevant Rails classes
+  gem "annotaterb", "~> 4.20.0"
 end
 
 group :test do
