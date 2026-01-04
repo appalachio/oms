@@ -44,6 +44,11 @@ gem "paper_trail", "~> 17.0.0"
 # Use FriendlyID to customize a model's url slug
 gem "friendly_id", "~> 5.6.0"
 
+# Simple Form makes forms easy!
+gem "simple_form", "~> 5.4.0"
+# Country Select is used by Simple Form to add a country select form field
+gem "country_select", "~> 11.0.0"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", "~> 1.11.1", platforms: %i[ mri windows ], require: "debug/prelude"
