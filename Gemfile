@@ -41,6 +41,9 @@ gem "image_processing", "~> 1.2"
 # Track and store changes to models with Paper Trail
 gem "paper_trail", "~> 17.0.0"
 
+# Use FriendlyID to customize a model's url slug
+gem "friendly_id", "~> 5.6.0"
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", "~> 1.11.1", platforms: %i[ mri windows ], require: "debug/prelude"
