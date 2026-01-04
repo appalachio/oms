@@ -1,24 +1,36 @@
-# README
+# Organization Management System (oms)
+![Continuous Integration](https://github.com/appalachio/oms/actions/workflows/continuous_integration.yml/badge.svg?branch=main)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Organization Management System (oms) is a Ruby on Rails, full stack, website designed to help small businesses and nonprofits with their online and technology needs.
 
-Things you may want to cover:
+## Contributing
 
-* Ruby version
+Contributions are welcomed! First please review the [Code of Conduct](https://github.com/appalachio/oms/blob/main/CODE_OF_CONDUCT.md).
 
-* System dependencies
+All commits must be signed off with the [Developer Certificate of Origin](https://www.developercertificate.org/) and a valid [commit signature](https://docs.github.com/en/authentication/managing-commit-signature-verification).
 
-* Configuration
+## Development
 
-* Database creation
+First, clone the repository in your local environment:
+```console
+git clone git@github.com:appalachio/oms.git
+```
 
-* Database initialization
+Then, enter the project directory and run the setup script:
+```console
+cd oms/
+bin/setup
+```
 
-* How to run the test suite
+Finally, launch the necessary local servers:
+```console
+bin/dev
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## Testing
 
-* Deployment instructions
+There are many tests and checks that must pass for changes to be approved and run in production. They will automatically be run on all pull requests. Additionally, you can run them locally from within the project's root directory:
 
-* ...
+```console
+bin/test
+```
