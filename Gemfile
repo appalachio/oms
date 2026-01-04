@@ -58,6 +58,9 @@ group :development do
 
   # Preview sent emails in the browser
   gem "letter_opener", "~> 1.10.0"
+
+  # Automatically add a comment with the table schema to the top of relevant files
+  gem "annotaterb", "~> 4.20.0"
 end
 
 group :test do
