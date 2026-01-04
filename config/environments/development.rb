@@ -64,6 +64,9 @@ Rails.application.configure do
   config.solid_queue.connects_to = { database: { writing: :queue } }
   config.solid_queue.logger = ActiveSupport::Logger.new(STDOUT)
 
+  # Disable authentication for this jobs dashboard since its only used in development env
+  config.mission_control.jobs.http_basic_auth_enabled = false
+
   # Highlight code that triggered redirect in logs.
   config.action_dispatch.verbose_redirect_logs = true
 

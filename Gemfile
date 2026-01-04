@@ -61,6 +61,9 @@ group :development do
 
   # Automatically add a comment with the table schema to the top of relevant files
   gem "annotaterb", "~> 4.20.0"
+
+  # View background queues and jobs
+  gem "mission_control-jobs", "~> 1.1.0"
 end
 
 group :test do
