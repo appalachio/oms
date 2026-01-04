@@ -67,4 +67,7 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara", "~> 3.40.0"
   gem "selenium-webdriver", "~> 4.39.0"
+
+  # Lint .html.erb files with ERB Lint
+  gem "erb_lint", "~> 0.9.0", require: false
 end
