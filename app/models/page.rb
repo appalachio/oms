@@ -30,6 +30,7 @@ class Page < ApplicationRecord
   validates :title, :page_type, presence: true
 
   has_paper_trail
+  include Archivable
 
 
 

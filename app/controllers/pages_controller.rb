@@ -1,9 +1,10 @@
 class PagesController < ApplicationController
-  before_action :set_page, only: %i[ show edit update destroy ]
+  before_action :set_page, only: %i[ show edit update archive restore destroy ]
 
   # GET /pages or /pages.json
   def index
-    @pages = Page.all
+    # Only load pages that have not been archived
+    @pages = Page.active
   end
 
   # GET /pages/1 or /pages/1.json
@@ -53,7 +54,30 @@ class PagesController < ApplicationController
     end
   end
 
+  # PUT /pages/1 or /pages/1.json
+  # Soft deletes the page
+  def archive
+    @page.archive
+
+    respond_to do |format|
+      format.html { redirect_to @page, notice: "Page was successfully archived. You can restore it at any time." }
+      format.json { render :show, status: :ok, location: @page }
+    end
+  end
+
+  # PUT /pages/1 or /pages/1.json
+  # Restores (un-soft deletes) the page
+  def restore
+    @page.restore
+
+    respond_to do |format|
+      format.html { redirect_to @page, notice: "Page was successfully restored." }
+      format.json { render :show, status: :ok, location: @page }
+    end
+  end
+
   # DELETE /pages/1 or /pages/1.json
+  # Permanently removes the page from the database
   def destroy
     @page.destroy!
 
