@@ -27,6 +27,10 @@
   </head>
 
   <body>
-    <%= yield %>
+    <h1 class="display-1 m-3">AIO <i class="bi bi-motherboard"></i></h1>
+    <%= render "partials/navbar" %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
