@@ -64,13 +64,16 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_09_000901) do
     t.datetime "archived_at"
     t.datetime "created_at", null: false
     t.json "page_extra_attributes"
-    t.text "page_type"
-    t.text "page_uuid"
+    t.text "page_type", default: "default", null: false
+    t.text "page_uuid", null: false
     t.datetime "published_at"
-    t.text "slug"
+    t.text "slug", null: false
     t.text "subtitle"
-    t.text "title"
+    t.text "title", null: false
     t.datetime "updated_at", null: false
+    t.index ["page_uuid"], name: "index_pages_on_page_uuid", unique: true
+    t.index ["slug"], name: "index_pages_on_slug", unique: true
+    t.index ["title"], name: "index_pages_on_title"
   end
 
   create_table "versions", force: :cascade do |t|

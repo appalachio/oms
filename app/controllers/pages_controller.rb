@@ -8,6 +8,9 @@ class PagesController < ApplicationController
 
   # GET /pages/1 or /pages/1.json
   def show
+    if request.path != page_path(@page)
+      redirect_to(@page, status: :moved_permanently)
+    end
   end
 
   # GET /pages/new
@@ -17,6 +20,9 @@ class PagesController < ApplicationController
 
   # GET /pages/1/edit
   def edit
+    if request.path != edit_page_path(@page)
+      redirect_to(edit_page_path(@page), status: :moved_permanently)
+    end
   end
 
   # POST /pages or /pages.json
@@ -60,11 +66,11 @@ class PagesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_page
-      @page = Page.find(params.expect(:id))
+      @page = Page.friendly.find(params.expect(:id))
     end
 
     # Only allow a list of trusted parameters through.
     def page_params
-      params.expect(page: [ :title, :subtitle, :slug, :page_uuid, :page_type, :body, :page_extra_attributes, :published_at, :archived_at ])
+      params.expect(page: [ :title, :subtitle, :page_type, :body, :published_at, photos: [] ])
     end
 end
