@@ -1,0 +1,38 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+# == Schema Information
+#
+# Table name: pages
+# Database name: primary
+#
+#  id                    :integer          not null, primary key
+#  archived_at           :datetime
+#  page_extra_attributes :json
+#  page_type             :text
+#  page_uuid             :text
+#  published_at          :datetime
+#  slug                  :text
+#  subtitle              :text
+#  title                 :text
+#  created_at            :datetime         not null
+#  updated_at            :datetime         not null
+#
+one:
+  title: MyText
+  subtitle: MyText
+  slug: MyText
+  page_uuid: MyText
+  page_type: MyText
+  page_extra_attributes: 
+  published_at: 2026-01-08 19:09:01
+  archived_at: 2026-01-08 19:09:01
+
+two:
+  title: MyText
+  subtitle: MyText
+  slug: MyText
+  page_uuid: MyText
+  page_type: MyText
+  page_extra_attributes: 
+  published_at: 2026-01-08 19:09:01
+  archived_at: 2026-01-08 19:09:01
