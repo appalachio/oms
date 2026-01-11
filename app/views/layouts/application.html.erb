@@ -26,8 +26,8 @@
     <title><%= content_for(:title) || "OMS" %></title>
   </head>
 
-  <body>
-    <h1 class="display-1 m-3" style="font-family: Genaminto">Appalachio <i class="bi bi-motherboard-fill"></i></h1>
+  <body data-bs-theme="vapor">
+    <h1 class="display-1 text-primary m-3" style="font-family: Genaminto">Appalachio <i class="bi bi-motherboard-fill"></i></h1>
     <%= render "partials/navbar" %>
     <div class="container">
       <%= yield %>
