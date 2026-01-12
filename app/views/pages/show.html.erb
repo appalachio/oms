@@ -3,7 +3,11 @@
   <h2 class="display-6 fw-medium mt-2"><%= @page.subtitle %></h2>
 <% end %>
 
-<p class="border-bottom border-1 pt-2 pb-3 mb-2">Published at <%= @page.published_at %></p>
+<div class="border-bottom border-1 pt-2 pb-2 mb-2">
+  <p>Published <relative-time datetime="<%= @page.published_at %>"><%= @page.published_at %></relative-time></p>
+  <p>Last updated <relative-time datetime="<%= @page.updated_at %>"><%= @page.updated_at %></relative-time></p>
+  <p>Created <relative-time datetime="<%= @page.created_at %>"><%= @page.created_at %></relative-time></p>
+</div>
 <div class="btn-group mb-4" role="group" aria-label="Actions you can perform on this page">
   <%= link_to "Back", :back, class: "btn btn-secondary" %>
   <%= link_to "Edit", edit_page_path(@page), class: "btn btn-primary" %>
