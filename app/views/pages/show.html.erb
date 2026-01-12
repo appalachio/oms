@@ -1,14 +1,20 @@
-<p style="color: green"><%= notice %></p>
+<h1 class="display-4 fw-semibold mt-5"><%= @page.title %></h1>
+<% if @page.subtitle? %>
+  <h2 class="display-6 fw-medium mt-2"><%= @page.subtitle %></h2>
+<% end %>
 
-<%= render @page %>
-
-<div>
-  <%= link_to "Edit this page", edit_page_path(@page) %> |
-  <%= link_to "Back to pages", pages_path %>
+<p class="border-bottom border-1 pt-2 pb-3 mb-2">Published at <%= @page.published_at %></p>
+<div class="btn-group mb-4" role="group" aria-label="Actions you can perform on this page">
+  <%= link_to "Back", :back, class: "btn btn-secondary" %>
+  <%= link_to "Edit", edit_page_path(@page), class: "btn btn-primary" %>
   <% if @page.active? %>
-    <%= button_to "Archive", archive_page_path(@page), method: :put %>
+    <%= button_to "Archive", archive_page_path(@page), method: :put, class: "btn btn-warning" %>
   <% else %>
-    <%= button_to "Restore", restore_page_path(@page), method: :put %>
+    <%= button_to "Restore", restore_page_path(@page), method: :put, class: "btn btn-warning" %>
   <% end %>
-  <%= button_to "Destroy this page", @page, method: :delete %>
+  <%= button_to "Delete", @page, method: :delete, class: "btn btn-danger" %>
+</div>
+
+<div class="mb-5">
+  <%= @page.body %>
 </div>
