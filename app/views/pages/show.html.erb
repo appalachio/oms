@@ -9,14 +9,24 @@
   <p>Created <relative-time datetime="<%= @page.created_at %>"><%= @page.created_at %></relative-time></p>
 </div>
 <div class="btn-group mb-4" role="group" aria-label="Actions you can perform on this page">
-  <%= link_to "Back", :back, class: "btn btn-secondary" %>
-  <%= link_to "Edit", edit_page_path(@page), class: "btn btn-primary" %>
-  <% if @page.active? %>
-    <%= button_to "Archive", archive_page_path(@page), method: :put, class: "btn btn-warning" %>
-  <% else %>
-    <%= button_to "Restore", restore_page_path(@page), method: :put, class: "btn btn-warning" %>
+  <%= link_to :back, class: "btn btn-secondary" do %>
+    <i class="bi bi-caret-left-square"> Back</i>
   <% end %>
-  <%= button_to "Delete", @page, method: :delete, class: "btn btn-danger" %>
+  <%= link_to edit_page_path(@page), class: "btn btn-primary" do %>
+    <i class="bi bi-pencil-square"> Edit</i>
+  <% end %>
+  <% if @page.active? %>
+    <%= button_to archive_page_path(@page), method: :put, class: "btn btn-warning" do %>
+      <i class="bi bi-archive"> Archive</i>
+    <% end %>
+  <% else %>
+    <%= button_to restore_page_path(@page), method: :put, class: "btn btn-warning" do %>
+      <i class="bi bi-archive-fill"> Restore</i>
+    <% end %>
+  <% end %>
+  <%= button_to @page, method: :delete, class: "btn btn-danger" do %>
+    <i class="bi bi-trash"> Delete</i>
+  <% end %>
 </div>
 
 <div class="mb-5">
