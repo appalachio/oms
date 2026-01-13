@@ -1,16 +1,19 @@
-<p style="color: green"><%= notice %></p>
+<h1 class="display-4 fw-semibold mt-5">Pages</h1>
+<h2 class="display-6 fw-medium mt-2"><%= @pages.count %> Pages Total</h2>
 
-<% content_for :title, "Pages" %>
+<div class="border-bottom border-1 pt-2 pb-2 mb-2"></div>
 
-<h1>Pages</h1>
-
-<div id="pages">
-  <% @pages.each do |page| %>
-    <%= render page %>
-    <p>
-      <%= link_to "Show this page", page %>
-    </p>
+<div class="btn-group mb-4" role="group" aria-label="Actions you can perform on pages">
+  <%= link_to :back, class: "btn btn-secondary" do %>
+    <i class="bi bi-caret-left-square"> Back</i>
+  <% end %>
+  <%= link_to new_page_path, class: "btn btn-primary" do %>
+    <i class="bi bi-plus-circle"> New Page</i>
   <% end %>
 </div>
 
-<%= link_to "New page", new_page_path %>
+<div id="pages" class="list-group">
+  <% @pages.each do |page| %>
+    <%= render page %>
+  <% end %>
+</div>

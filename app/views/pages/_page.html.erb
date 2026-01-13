@@ -1,47 +1,7 @@
-<div id="<%= dom_id page %>">
-  <div>
-    <strong>Title:</strong>
-    <%= page.title %>
+<a href="<%= page_path(page) %>" id="<%= dom_id page %>" class="list-group-item list-group-item-action border border-1 mb-2">
+  <div class="d-flex w-100 justify-content-between">
+    <h5 class="mb-1"><%= page.title %></h5>
+    <small>Published <relative-time datetime="<%= page.published_at %>"><%= page.published_at %></relative-time></small>
   </div>
-
-  <div>
-    <strong>Subtitle:</strong>
-    <%= page.subtitle %>
-  </div>
-
-  <div>
-    <strong>Slug:</strong>
-    <%= page.slug %>
-  </div>
-
-  <div>
-    <strong>Page uuid:</strong>
-    <%= page.page_uuid %>
-  </div>
-
-  <div>
-    <strong>Page type:</strong>
-    <%= page.page_type %>
-  </div>
-
-  <div>
-    <strong>Body:</strong>
-    <%= page.body %>
-  </div>
-
-  <div>
-    <strong>Page extra attributes:</strong>
-    <%= page.page_extra_attributes %>
-  </div>
-
-  <div>
-    <strong>Published at:</strong>
-    <%= page.published_at %>
-  </div>
-
-  <div>
-    <strong>Archived at:</strong>
-    <%= page.archived_at %>
-  </div>
-
-</div>
+  <p class="mb-1"><%= page.subtitle %></p>
+</a>
