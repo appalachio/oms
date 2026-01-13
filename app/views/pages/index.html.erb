@@ -1,5 +1,5 @@
 <h1 class="display-4 fw-semibold mt-5">Pages</h1>
-<h2 class="display-6 fw-medium mt-2"><%= @pages.count %> Pages Total</h2>
+<h4 class="display-6 fw-medium mt-2"><%= page_entries_info @pages %></h2>
 
 <div class="border-bottom border-1 pt-2 pb-2 mb-2"></div>
 
@@ -12,8 +12,16 @@
   <% end %>
 </div>
 
+<div class="d-flex justify-content-center mt-2 mb-3">
+  <%= paginate @pages %>
+</div>
+
 <div id="pages" class="list-group">
   <% @pages.each do |page| %>
     <%= render page %>
   <% end %>
+</div>
+
+<div class="d-flex justify-content-center mt-3">
+  <%= paginate @pages %>
 </div>

@@ -4,7 +4,7 @@ class PagesController < ApplicationController
   # GET /pages or /pages.json
   def index
     # Only load pages that have not been archived
-    @pages = Page.active
+    @pages = Page.order(published_at: :desc).active.page(params[:page])
   end
 
   # GET /pages/1 or /pages/1.json
