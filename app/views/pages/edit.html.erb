@@ -1,12 +1,11 @@
-<% content_for :title, "Editing page" %>
+<h1 class="display-4 fw-semibold mt-5">Editing Page</h1>
 
-<h1>Editing page</h1>
+<div class="border-bottom border-1 pt-2 pb-2 mb-2"></div>
+
+<div class="btn-group mb-4" role="group" aria-label="Actions you can perform while editing this page">
+  <%= link_to :back, class: "btn btn-danger" do %>
+    <i class="bi bi-x-circle"> Cancel</i>
+  <% end %>
+</div>
 
 <%= render "form", page: @page %>
-
-<br>
-
-<div>
-  <%= link_to "Show this page", @page %> |
-  <%= link_to "Back to pages", pages_path %>
-</div>
