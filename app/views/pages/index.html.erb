@@ -3,7 +3,7 @@
 
 <div class="border-bottom border-1 pt-2 pb-2 mb-2"></div>
 
-<div class="btn-group mb-4" role="group" aria-label="Actions you can perform on pages">
+<div class="btn-group mb-3" role="group" aria-label="Actions you can perform on pages">
   <%= link_to :back, class: "btn btn-secondary" do %>
     <i class="bi bi-caret-left-square"> Back</i>
   <% end %>
@@ -12,7 +12,7 @@
   <% end %>
 </div>
 
-<div class="d-flex justify-content-center mt-2 mb-3">
+<div class="d-flex justify-content-center">
   <%= paginate @pages %>
 </div>
 
