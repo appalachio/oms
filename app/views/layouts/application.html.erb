@@ -23,7 +23,8 @@
     <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
 
-    <title><%= content_for(:title) || "OMS" %></title>
+    <%= display_meta_tags site: "Appalach.io" %>
+    <% display_meta_tags index: true %>
   </head>
 
   <body data-bs-theme="vapor">

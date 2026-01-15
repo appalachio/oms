@@ -1,5 +1,6 @@
-<h1 class="display-4 fw-semibold mt-5">Pages</h1>
+<h1 class="display-4 fw-semibold mt-5"><%= title "Pages" %></h1>
 <h4 class="display-6 fw-medium mt-2"><%= page_entries_info @pages %></h2>
+<% set_meta_tags description: "An index of all the pages." %>
 
 <div class="border-bottom border-1 pt-2 pb-2 mb-2"></div>
 
@@ -25,3 +26,5 @@
 <div class="d-flex justify-content-center mt-3">
   <%= paginate @pages %>
 </div>
+<% set_meta_tags(prev: path_to_prev_page(@pages)) %>
+<% set_meta_tags(next: path_to_next_page(@pages)) %>
