@@ -13,20 +13,22 @@
   <%= link_to :back, class: "btn btn-secondary" do %>
     <i class="bi bi-caret-left-square"> Back</i>
   <% end %>
-  <%= link_to edit_page_path(@page), class: "btn btn-primary" do %>
-    <i class="bi bi-pencil-square"> Edit</i>
-  <% end %>
-  <% if @page.active? %>
-    <%= button_to archive_page_path(@page), method: :put, class: "btn btn-warning" do %>
-      <i class="bi bi-archive"> Archive</i>
+  <% if user_signed_in? %>
+    <%= link_to edit_page_path(@page), class: "btn btn-primary" do %>
+      <i class="bi bi-pencil-square"> Edit</i>
     <% end %>
-  <% else %>
-    <%= button_to restore_page_path(@page), method: :put, class: "btn btn-warning" do %>
-      <i class="bi bi-archive-fill"> Restore</i>
+    <% if @page.active? %>
+      <%= button_to archive_page_path(@page), method: :put, class: "btn btn-warning" do %>
+        <i class="bi bi-archive"> Archive</i>
+      <% end %>
+    <% else %>
+      <%= button_to restore_page_path(@page), method: :put, class: "btn btn-warning" do %>
+        <i class="bi bi-archive-fill"> Restore</i>
+      <% end %>
     <% end %>
-  <% end %>
-  <%= button_to @page, method: :delete, class: "btn btn-danger" do %>
-    <i class="bi bi-trash"> Delete</i>
+    <%= button_to @page, method: :delete, class: "btn btn-danger" do %>
+      <i class="bi bi-trash"> Delete</i>
+    <% end %>
   <% end %>
 </div>
 

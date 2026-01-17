@@ -8,8 +8,10 @@
   <%= link_to :back, class: "btn btn-secondary" do %>
     <i class="bi bi-caret-left-square"> Back</i>
   <% end %>
-  <%= link_to new_page_path, class: "btn btn-primary" do %>
-    <i class="bi bi-plus-circle"> New Page</i>
+  <% if user_signed_in? %>
+    <%= link_to new_page_path, class: "btn btn-primary" do %>
+      <i class="bi bi-plus-circle"> New Page</i>
+    <% end %>
   <% end %>
 </div>
 
