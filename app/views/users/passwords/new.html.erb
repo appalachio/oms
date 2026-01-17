@@ -1,0 +1,18 @@
+<h1 class="display-4 fw-semibold mt-5"><%= title "Forgot Your Password?" %></h1>
+
+<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :email,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "email" } %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Send Reset Password Instructions" %>
+  </div>
+<% end %>
+
+<%= render "users/shared/links" %>

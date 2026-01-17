@@ -1,0 +1,26 @@
+<h1 class="display-4 fw-semibold mt-5"><%= title "Create an Account" %></h1>
+<% set_meta_tags description: "Fill out the form to create an account with Appalach.io!" %>
+
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :email,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "email" } %>
+    <%= f.input :password,
+                required: true,
+                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                input_html: { autocomplete: "new-password" } %>
+    <%= f.input :password_confirmation,
+                required: true,
+                input_html: { autocomplete: "new-password" } %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Create Account" %>
+  </div>
+<% end %>
+
+<%= render "users/shared/links" %>
