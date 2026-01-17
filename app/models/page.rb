@@ -41,7 +41,8 @@ class Page < ApplicationRecord
     [
       :title,
       [ :title, :subtitle ],
-      [ :title, :subtitle, :published_at ]
+      [ :title, :subtitle, :published_at ],
+      [ :title, :subtitle, :published_at, :page_uuid ]
     ]
   end
 
