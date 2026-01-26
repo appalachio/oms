@@ -16,12 +16,18 @@
 #  title                 :text             not null
 #  created_at            :datetime         not null
 #  updated_at            :datetime         not null
+#  user_id               :integer          not null
 #
 # Indexes
 #
 #  index_pages_on_page_uuid  (page_uuid) UNIQUE
 #  index_pages_on_slug       (slug) UNIQUE
 #  index_pages_on_title      (title)
+#  index_pages_on_user_id    (user_id)
+#
+# Foreign Keys
+#
+#  user_id  (user_id => users.id)
 #
 one:
   title: MyText1
@@ -29,6 +35,7 @@ one:
   slug: mytext1
   page_type: default
   page_uuid: PageUUID1
+  user: one
   published_at: 2026-01-08 19:09:01
   archived_at: 2026-01-08 19:09:01
 
@@ -38,5 +45,6 @@ two:
   slug: mytext2
   page_type: default
   page_uuid: PageUUID2
+  user: two
   published_at: 2026-01-08 19:09:01
   archived_at: 2026-01-08 19:09:01

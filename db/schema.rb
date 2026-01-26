@@ -71,9 +71,11 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_15_124133) do
     t.text "subtitle"
     t.text "title", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id", null: false
     t.index ["page_uuid"], name: "index_pages_on_page_uuid", unique: true
     t.index ["slug"], name: "index_pages_on_slug", unique: true
     t.index ["title"], name: "index_pages_on_title"
+    t.index ["user_id"], name: "index_pages_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -123,4 +125,5 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_15_124133) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "pages", "users"
 end

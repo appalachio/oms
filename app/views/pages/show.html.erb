@@ -5,6 +5,7 @@
 <% end %>
 
 <div class="border-bottom border-1 pt-2 pb-2 mb-2">
+  <p class="mb-1">Authored by <%= link_to @page.user.name, @page.user %></p>
   <div>Published <relative-time datetime="<%= @page.published_at %>"><%= @page.published_at %></relative-time></div>
   <div>Last updated <relative-time datetime="<%= @page.updated_at %>"><%= @page.updated_at %></relative-time></div>
   <div class="pb-2">Created <relative-time datetime="<%= @page.created_at %>"><%= @page.created_at %></relative-time></div>

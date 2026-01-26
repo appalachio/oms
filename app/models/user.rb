@@ -45,17 +45,18 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :confirmable, :lockable, :timeoutable, :trackable
 
-  has_rich_text :profile
+  has_many :pages
 
-  has_one_attached :profile_picture
+  has_rich_text :profile
+  has_one_attached :profile_picture do |attachable|
+    attachable.variant :thumbnail, resize_to_limit: [ 200, 200 ], preprocessed: true
+  end
 
   validates :name, :username, presence: true
   validates :username, uniqueness: true
 
   has_paper_trail
-
   include Archivable
-
   before_create :assign_user_uuid
 
   extend FriendlyId

@@ -4,10 +4,19 @@
   <% set_meta_tags description: @user.username %>
 <% end %>
 
-<div class="border-bottom border-1 pt-2 pb-2 mb-2">
-  <div>Confirmed <relative-time datetime="<%= @user.confirmed_at %>"><%= @user.confirmed_at %></relative-time></div>
-  <div>Last updated <relative-time datetime="<%= @user.updated_at %>"><%= @user.updated_at %></relative-time></div>
-  <div class="pb-2">Created <relative-time datetime="<%= @user.created_at %>"><%= @user.created_at %></relative-time></div>
+<div class="container border-bottom border-1 pt-2 pb-2 mb-2">
+  <div class="row align-items-center">
+    <div class="col align-self-end">
+      <div>Confirmed <relative-time datetime="<%= @user.confirmed_at %>"><%= @user.confirmed_at %></relative-time></div>
+      <div>Last updated <relative-time datetime="<%= @user.updated_at %>"><%= @user.updated_at %></relative-time></div>
+      <div class="pb-2">Created <relative-time datetime="<%= @user.created_at %>"><%= @user.created_at %></relative-time></div>
+    </div>
+    <div class="col">
+      <% if @user.profile_picture.attached? %>
+        <%= image_tag @user.profile_picture.variant(:thumbnail), class: "img-thumbnail float-end" %>
+      <% end %>
+    </div>
+  </div>
 </div>
 <div class="btn-group mb-4" role="group" aria-label="Actions you can perform on this user">
   <%= link_to :back, class: "btn btn-secondary" do %>

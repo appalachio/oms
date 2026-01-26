@@ -14,26 +14,31 @@
 #  title                 :text             not null
 #  created_at            :datetime         not null
 #  updated_at            :datetime         not null
+#  user_id               :integer          not null
 #
 # Indexes
 #
 #  index_pages_on_page_uuid  (page_uuid) UNIQUE
 #  index_pages_on_slug       (slug) UNIQUE
 #  index_pages_on_title      (title)
+#  index_pages_on_user_id    (user_id)
+#
+# Foreign Keys
+#
+#  user_id  (user_id => users.id)
 #
 class Page < ApplicationRecord
-  has_rich_text :body
-
-  has_many_attached :photos
-
   enum :page_type, { default: "default", home_page: "home_page" }, default: :default, validate: true
+
+  belongs_to :user
+
+  has_rich_text :body
+  has_many_attached :photos
 
   validates :title, :page_type, presence: true
 
   has_paper_trail
-
   include Archivable
-
   before_create :assign_page_uuid
 
   extend FriendlyId
