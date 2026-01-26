@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_01_15_124133) do
+ActiveRecord::Schema[8.1].define(version: 2026_01_26_200909) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.text "body"
     t.datetime "created_at", null: false
@@ -58,6 +58,18 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_15_124133) do
     t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
+  end
+
+  create_table "organizations", force: :cascade do |t|
+    t.datetime "archived_at"
+    t.text "contact_email"
+    t.datetime "created_at", null: false
+    t.text "domain"
+    t.text "name"
+    t.text "slug"
+    t.text "subdomain"
+    t.datetime "updated_at", null: false
+    t.text "website_theme"
   end
 
   create_table "pages", force: :cascade do |t|
