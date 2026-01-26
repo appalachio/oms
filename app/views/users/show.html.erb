@@ -1,0 +1,39 @@
+<h1 class="display-4 fw-semibold mt-5"><%= title @user.name %></h1>
+<% if @user.username? %>
+  <h2 class="display-6 fw-medium mt-2"><%= @user.username %></h2>
+  <% set_meta_tags description: @user.username %>
+<% end %>
+
+<div class="border-bottom border-1 pt-2 pb-2 mb-2">
+  <div>Confirmed <relative-time datetime="<%= @user.confirmed_at %>"><%= @user.confirmed_at %></relative-time></div>
+  <div>Last updated <relative-time datetime="<%= @user.updated_at %>"><%= @user.updated_at %></relative-time></div>
+  <div class="pb-2">Created <relative-time datetime="<%= @user.created_at %>"><%= @user.created_at %></relative-time></div>
+</div>
+<div class="btn-group mb-4" role="group" aria-label="Actions you can perform on this user">
+  <%= link_to :back, class: "btn btn-secondary" do %>
+    <i class="bi bi-caret-left-square"> Back</i>
+  <% end %>
+  <% if user_signed_in? %>
+    <% if current_user == @user %>
+        <%= link_to edit_user_registration_path(@user), class: "btn btn-primary" do %>
+        <i class="bi bi-pencil-square"> Edit</i>
+        <% end %>
+    <% end %>
+    <% if @user.active? %>
+      <%= button_to archive_user_path(@user), method: :put, class: "btn btn-warning" do %>
+        <i class="bi bi-archive"> Archive</i>
+      <% end %>
+    <% else %>
+      <%= button_to restore_user_path(@user), method: :put, class: "btn btn-warning" do %>
+        <i class="bi bi-archive-fill"> Restore</i>
+      <% end %>
+    <% end %>
+    <%= button_to @user, data: { confirm: "Are you sure you want to delete this user? This cannot be undone.", turbo_confirm: "Are you sure you want to delete this user? This cannot be undone." }, method: :delete, class: "btn btn-danger" do %>
+      <i class="bi bi-trash"> Delete</i>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="mb-5">
+  <%= @user.profile %>
+</div>

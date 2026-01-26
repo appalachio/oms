@@ -10,6 +10,7 @@
 # Database name: primary
 #
 #  id                     :integer          not null, primary key
+#  archived_at            :datetime
 #  confirmation_sent_at   :datetime
 #  confirmation_token     :string
 #  confirmed_at           :datetime
@@ -21,12 +22,16 @@
 #  last_sign_in_at        :datetime
 #  last_sign_in_ip        :string
 #  locked_at              :datetime
+#  name                   :text             not null
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
 #  sign_in_count          :integer          default(0), not null
+#  slug                   :text             not null
 #  unconfirmed_email      :string
 #  unlock_token           :string
+#  user_uuid              :text             not null
+#  username               :text             not null
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #
@@ -35,10 +40,21 @@
 #  index_users_on_confirmation_token    (confirmation_token) UNIQUE
 #  index_users_on_email                 (email) UNIQUE
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
+#  index_users_on_slug                  (slug) UNIQUE
 #  index_users_on_unlock_token          (unlock_token) UNIQUE
+#  index_users_on_user_uuid             (user_uuid) UNIQUE
+#  index_users_on_username              (username) UNIQUE
 #
-one: {}
-# column: value
-#
-two: {}
-# column: value
+one:
+  name: User1
+  username: userone
+  email: user1@email.com
+  slug: user1
+  user_uuid: UserUUID1
+
+two:
+  name: User2
+  username: usertwo
+  email: user2@email.com
+  slug: user2
+  user_uuid: UserUUID2

@@ -32,6 +32,13 @@ class DeviseCreateUsers < ActiveRecord::Migration[8.1]
       t.string   :unlock_token
       t.datetime :locked_at
 
+      # OMS
+      t.text :name, null: false
+      t.text :username, null: false
+      t.text :slug, null: false
+      t.text :user_uuid, null: false
+
+      t.datetime :archived_at
       t.timestamps null: false
     end
 
@@ -39,5 +46,9 @@ class DeviseCreateUsers < ActiveRecord::Migration[8.1]
     add_index :users, :reset_password_token, unique: true
     add_index :users, :confirmation_token,   unique: true
     add_index :users, :unlock_token,         unique: true
+
+    add_index :users, :username,             unique: true
+    add_index :users, :slug,                 unique: true
+    add_index :users, :user_uuid,            unique: true
   end
 end

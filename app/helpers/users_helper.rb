@@ -39,10 +39,5 @@
 #  index_users_on_user_uuid             (user_uuid) UNIQUE
 #  index_users_on_username              (username) UNIQUE
 #
-require "test_helper"
-
-class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+module UsersHelper
 end

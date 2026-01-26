@@ -9,6 +9,7 @@ class PagesController < ApplicationController
 
   # GET /pages/1 or /pages/1.json
   def show
+    # Redirect to the latest version of the page url if an old version was used
     if request.path != page_path(@page)
       redirect_to(@page, status: :moved_permanently)
     end
@@ -25,6 +26,7 @@ class PagesController < ApplicationController
   def edit
     authenticate_user!
 
+    # Redirect to the latest version of the page url if an old version was used
     if request.path != edit_page_path(@page)
       redirect_to(edit_page_path(@page), status: :moved_permanently)
     end
@@ -62,7 +64,7 @@ class PagesController < ApplicationController
     end
   end
 
-  # PUT /pages/1 or /pages/1.json
+  # PUT /pages/1/archive or /pages/1/archive.json
   # Soft deletes the page
   def archive
     authenticate_user!
@@ -75,7 +77,7 @@ class PagesController < ApplicationController
     end
   end
 
-  # PUT /pages/1 or /pages/1.json
+  # PUT /pages/1/restore or /pages/1/restore.json
   # Restores (un-soft deletes) the page
   def restore
     authenticate_user!

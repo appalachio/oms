@@ -1,0 +1,7 @@
+<a href="<%= user_path(user) %>" id="<%= dom_id user %>" class="list-group-item list-group-item-action border border-1 mb-2">
+  <div class="d-flex w-100 justify-content-between">
+    <h5 class="mb-1"><%= user.name %></h5>
+    <small>Confirmed <relative-time datetime="<%= user.confirmed_at %>"><%= user.confirmed_at %></relative-time></small>
+  </div>
+  <p class="mb-1"><%= user.username %></p>
+</a>

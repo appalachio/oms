@@ -1,0 +1,27 @@
+<h1 class="display-4 fw-semibold mt-5"><%= title "Users" %></h1>
+<h4 class="display-6 fw-medium mt-2"><%= page_entries_info @users %></h2>
+<% set_meta_tags description: "An index of all the users." %>
+
+<div class="border-bottom border-1 pt-2 pb-2 mb-2"></div>
+
+<div class="btn-group mb-3" role="group" aria-label="Actions you can perform on users">
+  <%= link_to :back, class: "btn btn-secondary" do %>
+    <i class="bi bi-caret-left-square"> Back</i>
+  <% end %>
+</div>
+
+<div class="d-flex justify-content-center">
+  <%= paginate @users %>
+</div>
+
+<div id="pages" class="list-group">
+  <% @users.each do |user| %>
+    <%= render user %>
+  <% end %>
+</div>
+
+<div class="d-flex justify-content-center mt-3">
+  <%= paginate @users %>
+</div>
+<% set_meta_tags(prev: path_to_prev_page(@users)) %>
+<% set_meta_tags(next: path_to_next_page(@users)) %>

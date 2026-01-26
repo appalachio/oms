@@ -23,6 +23,7 @@
 #
 class Page < ApplicationRecord
   has_rich_text :body
+
   has_many_attached :photos
 
   enum :page_type, { default: "default", home_page: "home_page" }, default: :default, validate: true
@@ -30,12 +31,19 @@ class Page < ApplicationRecord
   validates :title, :page_type, presence: true
 
   has_paper_trail
+
   include Archivable
 
-
+  before_create :assign_page_uuid
 
   extend FriendlyId
   friendly_id :slug_candidates
+
+
+
+  def assign_page_uuid
+    self.page_uuid = SecureRandom.uuid if self.page_uuid.blank?
+  end
 
   def slug_candidates
     [
@@ -47,14 +55,6 @@ class Page < ApplicationRecord
   end
 
   def should_generate_new_friendly_id?
-    title_changed? || subtitle_changed? || published_at_changed? || super
-  end
-
-
-
-  before_create :assign_page_uuid
-
-  def assign_page_uuid
-    self.page_uuid = SecureRandom.uuid if self.page_uuid.blank?
+    title_changed? || subtitle_changed? || published_at_changed? || page_uuid_changed? || super
   end
 end
