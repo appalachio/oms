@@ -54,6 +54,7 @@ class User < ApplicationRecord
 
   validates :name, :username, presence: true
   validates :username, uniqueness: true
+  validate :profile_picture_is_a_picture
 
   has_paper_trail
   include Archivable
@@ -78,5 +79,13 @@ class User < ApplicationRecord
 
   def should_generate_new_friendly_id?
     username_changed? || name_changed? || user_uuid_changed? || super
+  end
+
+  private
+
+  def profile_picture_is_a_picture
+    if profile_picture.attached? && !profile_picture.content_type.in?(%w[image/png image/jpeg image/gif])
+      errors.add(:profile_picture, "must be in a photo format (png, jpeg, or gif)")
+    end
   end
 end

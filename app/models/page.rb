@@ -33,9 +33,10 @@ class Page < ApplicationRecord
   belongs_to :user
 
   has_rich_text :body
-  has_many_attached :photos
+  has_many_attached :pictures
 
   validates :title, :page_type, presence: true
+  validate :pictures_are_pictures
 
   has_paper_trail
   include Archivable
@@ -61,5 +62,16 @@ class Page < ApplicationRecord
 
   def should_generate_new_friendly_id?
     title_changed? || subtitle_changed? || published_at_changed? || page_uuid_changed? || super
+  end
+
+  private
+
+  def pictures_are_pictures
+    pictures.each do |picture|
+      unless picture.content_type.in?(%w[image/png image/jpeg image/gif])
+        errors.add(:pictures, "must all be in a photo format (png, jpeg, or gif)")
+        return
+      end
+    end
   end
 end
