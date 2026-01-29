@@ -7,7 +7,7 @@
       "dependencies": {
         "@github/relative-time-element": "^5.0.0",
         "@hotwired/stimulus": "^3.2.2",
-        "@hotwired/turbo-rails": "^8.0.21",
+        "@hotwired/turbo-rails": "^8.0.23",
         "@popperjs/core": "^2.11.8",
         "@rails/actiontext": "^8.1.200",
         "autoprefixer": "^10.4.23",
@@ -27,9 +27,9 @@
 
     "@hotwired/stimulus": ["@hotwired/stimulus@3.2.2", "", {}, "sha512-eGeIqNOQpXoPAIP7tC1+1Yc1yl1xnwYqg+3mzqxyrbE5pg5YFBZcA6YoTiByJB6DKAEsiWtl6tjTJS4IYtbB7A=="],
 
-    "@hotwired/turbo": ["@hotwired/turbo@8.0.21", "", {}, "sha512-fJTv3JnzFHeDxBb23esZSOhT4r142xf5o3lKMFMvzPC6AllkqbBKk5Yb31UZhtIsKQCwmO/pUQrtTUlYl5CHAQ=="],
+    "@hotwired/turbo": ["@hotwired/turbo@8.0.23", "", {}, "sha512-GZ7cijxEZ6Ig71u7rD6LHaRv/wcE/hNsc+nEfiWOkLNqUgLOwo5MNGWOy5ZV9ZUDSiQx1no7YxjTNnT4O6//cQ=="],
 
-    "@hotwired/turbo-rails": ["@hotwired/turbo-rails@8.0.21", "", { "dependencies": { "@hotwired/turbo": "^8.0.21", "@rails/actioncable": ">=7.0" } }, "sha512-RUnqt7tOVlQT539eVqFaAp4/32y7sLxvt3G7OIMROVlIMWvM8CXJk08xvIro2ueQViYRB6jwRjruNx7drIJPXg=="],
+    "@hotwired/turbo-rails": ["@hotwired/turbo-rails@8.0.23", "", { "dependencies": { "@hotwired/turbo": "^8.0.23", "@rails/actioncable": ">=7.0" } }, "sha512-iBILwda3qmQC7FYM70+4s6kEQ7Fx9dJ6+yGxjPyrz9a5JDx1+y7OAA5TA7GGVOZJoicMLrKGdFDNorl40X35lw=="],
 
     "@parcel/watcher": ["@parcel/watcher@2.5.1", "", { "dependencies": { "detect-libc": "^1.0.3", "is-glob": "^4.0.3", "micromatch": "^4.0.5", "node-addon-api": "^7.0.0" }, "optionalDependencies": { "@parcel/watcher-android-arm64": "2.5.1", "@parcel/watcher-darwin-arm64": "2.5.1", "@parcel/watcher-darwin-x64": "2.5.1", "@parcel/watcher-freebsd-x64": "2.5.1", "@parcel/watcher-linux-arm-glibc": "2.5.1", "@parcel/watcher-linux-arm-musl": "2.5.1", "@parcel/watcher-linux-arm64-glibc": "2.5.1", "@parcel/watcher-linux-arm64-musl": "2.5.1", "@parcel/watcher-linux-x64-glibc": "2.5.1", "@parcel/watcher-linux-x64-musl": "2.5.1", "@parcel/watcher-win32-arm64": "2.5.1", "@parcel/watcher-win32-ia32": "2.5.1", "@parcel/watcher-win32-x64": "2.5.1" } }, "sha512-dfUnCxiN9H4ap84DvD2ubjw+3vUNpstxa0TneY/Paat8a3R4uQZDLSvWjmznAY/DoahqTHl9V46HF/Zs3F29pg=="],
 
