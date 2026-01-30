@@ -38,6 +38,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[8.1]
       t.text :slug, null: false
       t.text :user_uuid, null: false
 
+      t.belongs_to :organization, null: false, foreign_key: true
+
       t.datetime :archived_at
       t.timestamps null: false
     end

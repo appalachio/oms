@@ -5,31 +5,37 @@
 # Table name: organizations
 # Database name: primary
 #
-#  id            :integer          not null, primary key
-#  archived_at   :datetime
-#  contact_email :text
-#  domain        :text
-#  name          :text
-#  slug          :text
-#  subdomain     :text
-#  website_theme :text
-#  created_at    :datetime         not null
-#  updated_at    :datetime         not null
+#  id                :integer          not null, primary key
+#  archived_at       :datetime
+#  domain            :text
+#  name              :text             not null
+#  organization_uuid :text             not null
+#  slug              :text             not null
+#  subdomain         :text
+#  website_theme     :text
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#
+# Indexes
+#
+#  index_organizations_on_name               (name) UNIQUE
+#  index_organizations_on_organization_uuid  (organization_uuid) UNIQUE
+#  index_organizations_on_slug               (slug) UNIQUE
 #
 one:
-  name: MyText
-  slug: MyText
-  contact_email: MyText
+  name: MyText1
+  slug: mytext1
   domain: MyText
   subdomain: MyText
   archived_at: 2026-01-26 15:09:09
   website_theme: MyText
+  organization_uuid: OrgUUID1
 
 two:
-  name: MyText
-  slug: MyText
-  contact_email: MyText
+  name: MyText2
+  slug: mytext2
   domain: MyText
   subdomain: MyText
   archived_at: 2026-01-26 15:09:09
   website_theme: MyText
+  organization_uuid: OrgUUID2

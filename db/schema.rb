@@ -62,19 +62,23 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_26_200909) do
 
   create_table "organizations", force: :cascade do |t|
     t.datetime "archived_at"
-    t.text "contact_email"
     t.datetime "created_at", null: false
     t.text "domain"
-    t.text "name"
-    t.text "slug"
+    t.text "name", null: false
+    t.text "organization_uuid", null: false
+    t.text "slug", null: false
     t.text "subdomain"
     t.datetime "updated_at", null: false
     t.text "website_theme"
+    t.index ["name"], name: "index_organizations_on_name", unique: true
+    t.index ["organization_uuid"], name: "index_organizations_on_organization_uuid", unique: true
+    t.index ["slug"], name: "index_organizations_on_slug", unique: true
   end
 
   create_table "pages", force: :cascade do |t|
     t.datetime "archived_at"
     t.datetime "created_at", null: false
+    t.integer "organization_id", null: false
     t.json "page_extra_attributes"
     t.text "page_type", default: "default", null: false
     t.text "page_uuid", null: false
@@ -84,6 +88,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_26_200909) do
     t.text "title", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id", null: false
+    t.index ["organization_id"], name: "index_pages_on_organization_id"
     t.index ["page_uuid"], name: "index_pages_on_page_uuid", unique: true
     t.index ["slug"], name: "index_pages_on_slug", unique: true
     t.index ["title"], name: "index_pages_on_title"
@@ -105,6 +110,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_26_200909) do
     t.string "last_sign_in_ip"
     t.datetime "locked_at"
     t.text "name", null: false
+    t.integer "organization_id", null: false
     t.datetime "remember_created_at"
     t.datetime "reset_password_sent_at"
     t.string "reset_password_token"
@@ -117,6 +123,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_26_200909) do
     t.text "username", null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["organization_id"], name: "index_users_on_organization_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["slug"], name: "index_users_on_slug", unique: true
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
@@ -137,5 +144,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_26_200909) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "pages", "organizations"
   add_foreign_key "pages", "users"
+  add_foreign_key "users", "organizations"
 end

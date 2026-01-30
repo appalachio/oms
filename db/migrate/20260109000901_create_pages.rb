@@ -11,6 +11,7 @@ class CreatePages < ActiveRecord::Migration[8.1]
       t.text :page_uuid, null: false
 
       t.belongs_to :user, null: false, foreign_key: true
+      t.belongs_to :organization, null: false, foreign_key: true
 
       t.datetime :published_at
       t.datetime :archived_at
