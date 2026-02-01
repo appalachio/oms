@@ -5,12 +5,10 @@
 
   <div class="form-inputs">
     <%= f.input :name %>
-    <%= f.input :slug %>
-    <%= f.input :about %>
-    <%= f.input :contact_email %>
+    <%= f.input :logo %>
+    <%= f.input :about, as: :rich_text_area %>
     <%= f.input :domain %>
     <%= f.input :subdomain %>
-    <%= f.input :archived_at %>
     <%= f.input :website_theme %>
   </div>
 

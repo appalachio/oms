@@ -1,42 +1,6 @@
-<div id="<%= dom_id organization %>">
-  <div>
-    <strong>Name:</strong>
-    <%= organization.name %>
+<a href="<%= organization_path(organization) %>" id="<%= dom_id organization %>" class="list-group-item list-group-item-action border border-1 mb-2">
+  <div class="d-flex w-100 justify-content-between">
+    <h5 class="mb-1"><%= organization.name %></h5>
+    <small>Created <relative-time datetime="<%= organization.created_at %>"><%= organization.created_at %></relative-time></small>
   </div>
-
-  <div>
-    <strong>Slug:</strong>
-    <%= organization.slug %>
-  </div>
-
-  <div>
-    <strong>About:</strong>
-    <%= organization.about %>
-  </div>
-
-  <div>
-    <strong>Contact email:</strong>
-    <%= organization.contact_email %>
-  </div>
-
-  <div>
-    <strong>Domain:</strong>
-    <%= organization.domain %>
-  </div>
-
-  <div>
-    <strong>Subdomain:</strong>
-    <%= organization.subdomain %>
-  </div>
-
-  <div>
-    <strong>Archived at:</strong>
-    <%= organization.archived_at %>
-  </div>
-
-  <div>
-    <strong>Website theme:</strong>
-    <%= organization.website_theme %>
-  </div>
-
-</div>
+</a>

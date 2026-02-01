@@ -1,11 +1,11 @@
-<% content_for :title, "New organization" %>
+<h1 class="display-4 fw-semibold mt-5"><%= title "New Organization" %></h1>
 
-<h1>New organization</h1>
+<div class="border-bottom border-1 pt-2 pb-2 mb-2"></div>
 
-<%= render "form", organization: @organization %>
-
-<br>
-
-<div>
-  <%= link_to "Back to organizations", organizations_path %>
+<div class="btn-group mb-4" role="group" aria-label="Actions you can perform on this new organization">
+  <%= link_to :back, class: "btn btn-danger" do %>
+    <i class="bi bi-x-circle"> Cancel</i>
+  <% end %>
 </div>
+
+<%= render "form", page: @organization %>
