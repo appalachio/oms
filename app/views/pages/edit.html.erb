@@ -1,8 +1,11 @@
 <h1 class="display-4 fw-semibold mt-5"><%= title "Editing Page" %></h1>
-<% set_meta_tags description: "An index of all the pages." %>
+<% set_meta_tags description: "Editing the page #{@page.title}." %>
 
-<div class="border-bottom border-1 pt-2 pb-2 mb-2"></div>
-
+<div class="border-bottom border-1 pt-2 mb-2 mb-2">
+  <div>Published <relative-time datetime="<%= @page.published_at %>"><%= @page.published_at %></relative-time></div>
+  <div>Last updated <relative-time datetime="<%= @page.updated_at %>"><%= @page.updated_at %></relative-time></div>
+  <div class="pb-2">Created <relative-time datetime="<%= @page.created_at %>"><%= @page.created_at %></relative-time></div>
+</div>
 <div class="btn-group mb-4" role="group" aria-label="Actions you can perform while editing this page">
   <%= link_to :back, class: "btn btn-danger" do %>
     <i class="bi bi-x-circle"> Cancel</i>

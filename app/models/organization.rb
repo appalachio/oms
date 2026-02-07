@@ -5,12 +5,10 @@
 #
 #  id                :integer          not null, primary key
 #  archived_at       :datetime
-#  domain            :text
 #  name              :text             not null
 #  organization_uuid :text             not null
 #  slug              :text             not null
-#  subdomain         :text
-#  website_theme     :text
+#  subdomain         :text             not null
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #
@@ -19,6 +17,7 @@
 #  index_organizations_on_name               (name) UNIQUE
 #  index_organizations_on_organization_uuid  (organization_uuid) UNIQUE
 #  index_organizations_on_slug               (slug) UNIQUE
+#  index_organizations_on_subdomain          (subdomain) UNIQUE
 #
 class Organization < ApplicationRecord
   has_many :users
@@ -29,8 +28,8 @@ class Organization < ApplicationRecord
     attachable.variant :thumbnail, resize_to_limit: [ 200, 200 ], preprocessed: true
   end
 
-  validates :name, :about, :logo, presence: true
-  validates :name, uniqueness: true
+  validates :name, :about, :subdomain, :logo, presence: true
+  validates :name, :subdomain, uniqueness: true
 
   has_paper_trail
   include Archivable

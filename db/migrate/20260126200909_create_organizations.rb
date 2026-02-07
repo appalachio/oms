@@ -5,9 +5,7 @@ class CreateOrganizations < ActiveRecord::Migration[8.1]
       t.text :slug, null: false
       t.text :organization_uuid, null: false
 
-      t.text :domain
-      t.text :subdomain
-      t.text :website_theme
+      t.text :subdomain, null: false
 
       t.datetime :archived_at
       t.timestamps
@@ -16,5 +14,6 @@ class CreateOrganizations < ActiveRecord::Migration[8.1]
     add_index :organizations, :name, unique: true
     add_index :organizations, :slug, unique: true
     add_index :organizations, :organization_uuid, unique: true
+    add_index :organizations, :subdomain, unique: true
   end
 end

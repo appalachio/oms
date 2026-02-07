@@ -8,9 +8,7 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-organization = Organization.new(name: "Appalach.io", about: "<div>Appalach.io aims to help provide free and open source technology to small/medium businesses and non profits!&nbsp;</div>\n", domain: "www.appalach.io")
-organization.logo.attach(io: File.open("#{Dir.home}/Documents/Appalachio/assets/motherboard-fill.svg"), filename: "logo.svg")
-organization.save!
+organization = Organization.create!(name: "Appalach.io", subdomain: "appalachio", about: "<div>Appalach.io aims to help provide free and open source technology to small/medium businesses and non profits!&nbsp;</div>\n", logo: { io: File.open("#{Dir.home}/Documents/Appalachio/assets/motherboard-fill.svg"), filename: 'logo.svg' })
 
 user = User.create!(name: "John Smith", username: "js", profile: "<div>John Smith was born in <em>NYC, NY, USA</em> in the 21st century! He enjoys <strong>popular culture</strong> and does most common activities. There was once a time...<br><br></div><h1>Some common answers:</h1><ul><li>Yes</li><li>No</li><li>Maybe</li></ul><div><br><br>But only on <del>Saturdays</del> <a href=\"https://www.pbsbooks.org/virtual-library/garfields-sunday-finest/\">Sundays</a>!!</div>\n", profile_picture: "", email: "john@smith.com", password: "password", confirmed_at: Time.current, organization: organization)
 

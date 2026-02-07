@@ -1,10 +1,5 @@
 <h1 class="display-4 fw-semibold mt-5"><%= title @organization.name %></h1>
-<% if @organization.subdomain? %>
-  <h2 class="display-6 fw-medium mt-2"><%= @organization.subdomain %></h2>
-<% end %>
-<% if @organization.domain? %>
-  <h2 class="display-6 fw-medium mt-2"><%= @organization.domain %></h2>
-<% end %>
+<h2 class="display-6 fw-medium mt-2"><%= @organization.subdomain %></h2>
 <% set_meta_tags description: @organization.about.to_plain_text %>
 
 <div class="border-bottom border-1 pt-2 pb-2 mb-2">

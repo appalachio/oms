@@ -63,16 +63,15 @@ ActiveRecord::Schema[8.1].define(version: 2026_01_26_200909) do
   create_table "organizations", force: :cascade do |t|
     t.datetime "archived_at"
     t.datetime "created_at", null: false
-    t.text "domain"
     t.text "name", null: false
     t.text "organization_uuid", null: false
     t.text "slug", null: false
-    t.text "subdomain"
+    t.text "subdomain", null: false
     t.datetime "updated_at", null: false
-    t.text "website_theme"
     t.index ["name"], name: "index_organizations_on_name", unique: true
     t.index ["organization_uuid"], name: "index_organizations_on_organization_uuid", unique: true
     t.index ["slug"], name: "index_organizations_on_slug", unique: true
+    t.index ["subdomain"], name: "index_organizations_on_subdomain", unique: true
   end
 
   create_table "pages", force: :cascade do |t|

@@ -1,20 +1,15 @@
-<h1 class="display-4 fw-semibold mt-5"><%= title "Editting Organization" %></h1>
-<%= set_meta_tags description: "An index of all the organizations on this instance." %>
+<h1 class="display-4 fw-semibold mt-5"><%= title "Editing Organization" %></h1>
+<% set_meta_tags description: "Editing the organization #{@organization.name}." %>
 
 <div class="border-bottom border-1 pt-2 mb-2 mb-2">
   <div>Last updated <relative-time datetime="<%= @organization.updated_at %>"><%= @organization.updated_at %></relative-time></div>
   <div class="pb-2">Created <relative-time datetime="<%= @organization.created_at %>"><%= @organization.created_at %></relative-time></div>
 </div>
 
-<% content_for :title, "Editing organization" %>
-
-<h1>Editing organization</h1>
+<div class="btn-group mb-4" role="group" aria-label="Actions you can perform while editing this page">
+  <%= link_to :back, class: "btn btn-danger" do %>
+    <i class="bi bi-x-circle"> Cancel</i>
+  <% end %>
+</div>
 
 <%= render "form", organization: @organization %>
-
-<br>
-
-<div>
-  <%= link_to "Show this organization", @organization %> |
-  <%= link_to "Back to organizations", organizations_path %>
-</div>
