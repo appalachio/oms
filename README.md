@@ -1,7 +1,7 @@
 # Organization Management System (oms)
 ![Continuous Integration](https://github.com/appalachio/oms/actions/workflows/ci.yml/badge.svg?branch=main)
 
-Organization Management System (oms) is a Ruby on Rails, full stack, website designed to help small businesses and nonprofits with their online and technology needs.
+Organization Management System (oms) is a Ruby on Rails, full stack website designed to help small businesses and nonprofits with their online and technology needs.
 
 ## Contributing
 
