@@ -16,16 +16,18 @@ First, clone the repository in your local environment:
 git clone git@github.com:appalachio/oms.git
 ```
 
-Then, enter the project directory and run the setup script:
+Enter the project directory and run the setup script:
 ```console
 cd oms/
 bin/setup
 ```
 
-Finally, launch the necessary local servers:
+Launch the necessary local servers:
 ```console
 bin/dev
 ```
+
+Finally, visit localhost:3000 in your web browser.
 
 ## Testing
 
